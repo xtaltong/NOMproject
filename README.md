@@ -19,13 +19,14 @@
 ## Project Description
  > our project description should summarize the project you are proposing. Be sure to include
  > * Why is it important or interesting to you?
+ > Food delivery apps are heavily relied on by the college student populace, but has skyrocketed in popularity due to recent events. As a program that could be useful to people who use delivery, we wanted to create something that could be functional and relevant to people's needs today. Because food is a interesting topic to us, we wanted to design this so that people could have an easier time comparing their options when ordering delivery.
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
  >   * [toolname](link) - Short description
  > * What will be the input/output of your project?
  > * What are the three design patterns you will be using. For each design pattern you must:
  >   * Explain in 3 - 5 sentences why you picked this pattern and what feature you will implement with it
  > * This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted.
- > We will be creating a web application that compares different food delivery apps and their price differences. Food delivery apps are heavily relied on by the college student populace, but has skyrocketed in popularity due to recent events. People should be able to easily see the break down in delivery costs and menu availability for the different delivery apps. We will be using the Uber Eats, Postmates, and GrubHub APIs and languages C++, HTML, and CSS to create our project. 
+ > We will be creating a terminal-based application that compares different food delivery apps and their price differences. People should be able to easily see the break down in types of costs involved in food deliveries and menu availability for the different delivery apps. We will be using the Uber Eats, Postmates, and GrubHub APIs and languages C++ to create our project which will be functional only in the terminal, and if time allows, then we want to make the interface available as a web application. 
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
