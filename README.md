@@ -22,7 +22,7 @@
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
  >   * [toolname](link) - Short description
  > * What will be the input/output of your project?
- > The input will be the name of a food place and item name. Using this information, the program will gather information from various food delivery systems and return the best possible food app to order from.
+ >   * The input will be the name of a food place and item name. Using this information, the program will gather information from various food delivery systems and return the best possible food app to order from.
  > * What are the three design patterns you will be using. For each design pattern you must:
  >   * Explain in 3 - 5 sentences why you picked this pattern and what feature you will implement with it
  > * This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted.
