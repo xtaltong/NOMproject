@@ -4,7 +4,7 @@
 # NOM
  > Your author list below should include links to all members GitHub and should begin with a "\<" (remove existing author).
  
- > Authors: \<[Crystal Tong](https://github.com/xtaltong)\> \<[Ellie Cheng](https://github.com/ECheng742)\> \<[Sahas Poyeker](https://github.com/faultylegend)\>
+ > Authors: [Crystal Tong](https://github.com/xtaltong) [Ellie Cheng](https://github.com/ECheng742) [Sahas Poyeker](https://github.com/faultylegend)
  
  > You will be forming a group of **THREE** students and work on an interesting project that you will propose yourself (in this `README.md` document). You can pick any project that you'd like, but it needs ot implement three design patterns. Each of the members in a group is expected to work on at least one design pattern and its test cases. You can, of course, help each other, but it needs to be clear who will be responsible for which pattern and for which general project features.
  
@@ -23,8 +23,8 @@
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
  >   * [toolname](link) - Short description
  >   * [Postmates API](https://postmates.com/developer) - Use data from Postmates API as the basis for the comparison of delivery costs
- >   * \<[Grubhub API](https://grubhub-developers.zendesk.com/hc/en-us)\> - Use data from Grubhub API as the basis for the comparison of delivery costs
- >   * \<[Uber Eats API](https://developer.uber.com/docs/eats/introduction)\> - Use data from Uber Eats API as the basis for the comparison of delivery costs
+ >   * [Grubhub API](https://grubhub-developers.zendesk.com/hc/en-us) - Use data from Grubhub API as the basis for the comparison of delivery costs
+ >   * [Uber Eats API](https://developer.uber.com/docs/eats/introduction) - Use data from Uber Eats API as the basis for the comparison of delivery costs
  > * What will be the input/output of your project?
  >   * The input will be the name of a food place and item name. Using this information, the program will gather information from various food delivery systems and return the best possible food app to order from.
  > * What are the three design patterns you will be using. For each design pattern you must:
