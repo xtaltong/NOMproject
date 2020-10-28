@@ -24,7 +24,7 @@
  >   * [Postmates API](https://postmates.com/developer) - Use data from Postmates API as the basis for the comparison of delivery costs
  >   * [Grubhub API](https://grubhub-developers.zendesk.com/hc/en-us) - Use data from Grubhub API as the basis for the comparison of delivery costs
  >   * [Uber Eats API](https://developer.uber.com/docs/eats/introduction) - Use data from Uber Eats API as the basis for the comparison of delivery costs
- >   * We will be creating a terminal-based application that compares different food delivery apps and their price differences. People should be able to easily see the break down in types of costs involved in food deliveries and menu availability for the different delivery apps. We will be using the Uber Eats, Postmates, and GrubHub APIs and languages C++ to create our project which will be functional only in the terminal, and if time allows, then we want to make the interface available as a web application.
+ >   * C++
  > * What will be the input/output of your project?
  >   * The input will be the name of a food place and item name. Using this information, the program will gather information from various food delivery systems and return the best possible food app to order from.
  > * What are the three design patterns you will be using. For each design pattern you must:
@@ -33,6 +33,7 @@
  >   * Abstract Factory: By using the Abstract Factory pattern, we can establish a factory that generates different object types for the different delivery apps. This pattern will primarly be used for creating differnt variations of the app information object that will store information from the API of different food delivery apps. If one app uses a different format to store information that the others, the factory object can create a new object that will encapsulate the new API structure. This will be very useful for having each API as a modular object that can be implemented in the program.
  >   * Composite: Composite is a design pattern that treats a group of objects as a single instance of an object. Since we'll be having multiple APIs to work with, being able to treat these interfaces the same is advantageous. This way, the user can interact with objects of varying complexity seamlessly.
  > * This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
+ > * Additional Description: We will be creating a terminal-based application that compares different food delivery apps and their price differences. People should be able to easily see the break down in types of costs involved in food deliveries and menu availability for the different delivery apps. We will be using the Uber Eats, Postmates, and GrubHub APIs and languages C++ to create our project which will be functional only in the terminal, and if time allows, then we want to make the interface available as a web application.
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
