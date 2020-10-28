@@ -22,7 +22,7 @@
  > Food delivery apps are heavily relied on by the college student populace, but has skyrocketed in popularity due to recent events. As a program that could be useful to people who use delivery, we wanted to create something that could be functional and relevant to people's needs today. Because food is a interesting topic to us, we wanted to design this so that people could have an easier time comparing their options when ordering delivery.
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
  >   * [toolname](link) - Short description
- >   * \[Postmates API](https://postmates.com/developer)\ - Use data from Postmates API as the basis for the comparison of delivery costs
+ >   * [Postmates API](https://postmates.com/developer) - Use data from Postmates API as the basis for the comparison of delivery costs
  >   * \<[Grubhub API](https://grubhub-developers.zendesk.com/hc/en-us)\> - Use data from Grubhub API as the basis for the comparison of delivery costs
  >   * \<[Uber Eats API](https://developer.uber.com/docs/eats/introduction)\> - Use data from Uber Eats API as the basis for the comparison of delivery costs
  > * What will be the input/output of your project?
