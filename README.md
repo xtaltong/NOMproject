@@ -26,7 +26,7 @@
  >   * [Uber Eats API](https://developer.uber.com/docs/eats/introduction) - Use data from Uber Eats API as the basis for the comparison of delivery costs
  >   * C++
  > * What will be the input/output of your project?
- >   * The input will be the name of a food place and item name. Using this information, the program will gather information from various food delivery systems and return the best possible food app to order from.
+ >   * The input will be the name of a food place and item name(s). Using this information, the program should gather information from various food delivery systems and show the comparisons between these food apps. If time allows, another extra feature could be to receive input of food item(s) and use this to gather information about which food places nearby offer this item in addition to the cost comparisons.
  > * What are the three design patterns you will be using. For each design pattern you must:
  >   * Explain in 3 - 5 sentences why you picked this pattern and what feature you will implement with it
  >   * Strategy: Strategy allows us to pick how to display the availability and prices of items depending on what information the client wants to recieve at runtime. If the client wishes to see the best delivery app price depending on their food item, just the App name and price will show up. If the client wants to see the quickest food delivery or which apps it is available on, it will use a different print format. This will also make in easy to implement a print function for the different API from delivery apps and will allow easy expansion to the program.
