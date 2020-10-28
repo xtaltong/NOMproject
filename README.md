@@ -1,10 +1,10 @@
  > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
  > Prompt text is any lines beginning with "\<"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# \<Project title\>
+# NOM
  > Your author list below should include links to all members GitHub and should begin with a "\<" (remove existing author).
  
- > Authors: \<[Jeffrey McDaniel](https://github.com/jmcda001)\>
+ > Authors: \<[Crystal Tong](https://github.com/xtaltong)\> \<[Ellie Cheng](https://github.com/ECheng742)\> \<[Sahas Poyeker](https://github.com/faultylegend)\>
  
  > You will be forming a group of **THREE** students and work on an interesting project that you will propose yourself (in this `README.md` document). You can pick any project that you'd like, but it needs ot implement three design patterns. Each of the members in a group is expected to work on at least one design pattern and its test cases. You can, of course, help each other, but it needs to be clear who will be responsible for which pattern and for which general project features.
  
@@ -17,14 +17,15 @@
  > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
 
 ## Project Description
- > Your project description should summarize the project you are proposing. Be sure to include
+ > our project description should summarize the project you are proposing. Be sure to include
  > * Why is it important or interesting to you?
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
  >   * [toolname](link) - Short description
  > * What will be the input/output of your project?
  > * What are the three design patterns you will be using. For each design pattern you must:
  >   * Explain in 3 - 5 sentences why you picked this pattern and what feature you will implement with it
- > * This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
+ > * This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted.
+ > We will be creating a web application that compares different food delivery apps and their price differences. Food delivery apps are heavily relied on by the college student populace, but has skyrocketed in popularity due to recent events. People should be able to easily see the break down in delivery costs and menu availability for the different delivery apps. We will be using the Uber Eats, Postmates, and GrubHub APIs and languages C++, HTML, and CSS to create our project. 
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
