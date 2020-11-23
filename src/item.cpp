@@ -17,3 +17,19 @@ bool Item::operator==(const Item &otherItem) const{
         return false;
     }
 }
+
+void Item::setName(string name){
+    this->name = name;
+}
+
+string Item::getName() const{
+    return name;
+}
+
+void Item::setPrice(double price){
+    this->price = price;
+}
+
+double Item::getPrice() const{
+    return price;
+}
