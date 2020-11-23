@@ -10,7 +10,12 @@ void Restaurant::addItem(Item* item) {
 }
 
 void Restaurant::removeItem(Item* item) {
-
+    for auto i : order {
+        if (order.at(i) == item) {
+            order.erase(order.begin() + i);
+            return;
+        }
+    }
 }
 
 Item* Restaurant::getItem(int index) const {
@@ -18,5 +23,8 @@ Item* Restaurant::getItem(int index) const {
 }
 
 void Restaurant::display() const {
-    
+    for auto i : order {
+        order.at(i).display();
+        cout << endl;
+    }
 }
