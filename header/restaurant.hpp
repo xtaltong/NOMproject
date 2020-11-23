@@ -17,3 +17,4 @@ class Restaurant {
 		void getItem(int ) const;
 		void display() const;
 };
+#endif __RESTAURANT_HPP__
