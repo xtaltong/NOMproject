@@ -8,10 +8,11 @@ using namespace std;
 
 class Restaurant {
 	private:
+		string name;
 		vector<Item *> order;
 
 	public:
-		Restaurant();
+		Restaurant(string name);
 		void addItem(Item* );
 		void removeItem(Item* );
 		void getItem(int ) const;

@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-Restaurant::Restaurant() {}
+Restaurant::Restaurant(string name) : name(name) {}
 
 void Restaurant::addItem(Item* item) {
     order.push_back(item);
