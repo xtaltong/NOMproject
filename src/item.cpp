@@ -6,11 +6,11 @@ using namespace std;
 Item::Item(){}
 
 void Item::displayItem() const{
-    cout << "Item: " << itemTag->name << " Price: $" << itemTag->price << endl;
+    cout << "Item: " << this->name << " Price: $" << this->price << endl;
 }
 
 bool Item::operator==(const Item &otherItem) const{
-    if (this->itemTag->name == otherItem.itemTag->name && this->itemTag->price == otherItem.itemTag->price){
+    if (this->name == otherItem.name && this->price == otherItem.price){
         return true;
     }
     else{
