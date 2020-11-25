@@ -5,7 +5,7 @@
 #include "timebreakdown.hpp"
 using namespace std;
 
-class UETimeBreakdown:TimeBreakdown{
+class UETimeBreakdown: public TimeBreakdown{
     private:
 
     public:
