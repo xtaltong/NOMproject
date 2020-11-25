@@ -4,11 +4,11 @@
 #include <iostream>
 using namespace std;
 
-class TimeBreakDown{
+class TimeBreakdown{
     private:
 
     public:
-        TimeBreakDown();
+        TimeBreakdown();
         virtual void collectTimeMetaData() = 0;
 };
 
