@@ -56,7 +56,7 @@
  > * Before the meeting you should perform a sprint plan like you did in Phase II
  > * In the meeting with your TA you will discuss: 
  >   - How effective your last sprint was (each member should talk about what they did)
-* So far the development is going pretty well. Sahas worked on writing the framework for the Timebreakdown product and Tag/ Item framework and functions. Crystal worked on the strategy pattern and delivery factory portion of the project. Ellie has developed the restaurant class and made some methods and created the framework for the PriceBreakdown.
+* So far the development is going pretty well. Sahas worked on writing the framework for the Timebreakdown product and Tag/ Item framework and functions. Crystal worked on the strategy pattern and delivery factory portion of the project. Ellie has developed the restaurant class and made some methods and created the framework for the PriceBreakdown. We've updated the Kanban board with completed tasks to the checklists as well as linked pull requests to the issues.
  >   - Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
  * We have not made much progress on the possible GUI for our application. We also did not implement many functions that will be used throughout the application either. We have taken these into consideration when developing the application and will focus on creating the functions and connecting then throughout the program. If time permits, we will implement a GUI system once everything else is done using python.
  >   - Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
