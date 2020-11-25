@@ -5,7 +5,7 @@
 #include "timebreakdown.hpp"
 using namespace std;
 
-class DDTimeBreakdown{
+class DDTimeBreakdown:TimeBreakDown{
     private:
 
     public:
