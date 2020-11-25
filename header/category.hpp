@@ -7,7 +7,7 @@ using namespace std;
 
 class Category{
     private:
-        vector<Item*> items;
+        vector<Tag*> tags;
     public:
         Category();
         void addTag(Tag* tag);

@@ -7,12 +7,9 @@ using namespace std;
 
 class FoodItem{
     private:
-        double price;
         string name;
     public:
         FoodItem();
-        void addTag(Tag* tag);
-        void removeTag(int index);
         void display() const;
 };
 
