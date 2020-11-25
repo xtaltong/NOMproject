@@ -60,7 +60,9 @@
  >   - Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
  *We have not made much progress on the possible GUI for our application. We also did not implement many functions that will be used throughout the application either. We have taken these into consideration when developing the application and will focus on creating the functions and connecting then throughout the program. If time permits, we will implement a GUI system once everything else is done using python.
  >   - Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
+ We haven't had bugs yet, mostly because we have created unit tests. There will be unit tests in the next sprint for the classes we've implemented, as well as creating drivers or stubs in place of modules we've not yet created so that we are able to do testing in the meantime. Then, any bugs identified there will be made into issues that can be fixed. Currently, any small bugs we've faced were solved and merged via pull requests.
  >   - What tasks you are planning for this next sprint.
+ For the next sprint, we plan to implement the FoodItem and Category functions, the PriceStrategy and TimeStrategy algorithms, and also the virtual functions from DeliveryOption, PriceBreakdown, TimeBreakdown, and RestaurantList. We will gather data or use mock data to run units test for these functions as well as integrated tests that test across the different classes.
 
  > ## Final deliverable
  > All group members will give a demo to the TA during lab time. The TA will check the demo and the project GitHub repository and ask a few questions to all the team members. 
