@@ -10,7 +10,7 @@ class Category{
         string name;
         vector<Tag*> tags;
     public:
-        Category();
+        Category(string name);
         virtual void addTag(Tag* tag);
         virtual void removeTag(Tag* tag);
         virtual void display() const;
