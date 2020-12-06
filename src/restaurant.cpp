@@ -10,7 +10,7 @@ void Restaurant::addItem(Item* item) {
 }
 
 void Restaurant::removeItem(Item* item) {
-    for (auto i : order) {
+    for (unsigned int i = 0; i < order.size(); i++) {
         if (order.at(i) == item) {
             order.erase(order.begin() + i);
             return;
