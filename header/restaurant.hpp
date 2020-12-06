@@ -15,7 +15,7 @@ class Restaurant {
 		Restaurant(string name);
 		void addItem(Item* );
 		void removeItem(Item* );
-		void getItem(int ) const;
+		Item* getItem(int ) const;
 		void display() const;
 };
 #endif __RESTAURANT_HPP__
