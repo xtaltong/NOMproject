@@ -5,7 +5,7 @@
 #include "tag.hpp"
 using namespace std;
 
-class Category{
+class Category : public Tag{
     private:
         string name;
         vector<Tag*> tags;
@@ -14,6 +14,7 @@ class Category{
         virtual void addTag(Tag* tag);
         virtual void removeTag(Tag* tag);
         virtual void display() const;
+        virtual Tag* find(string obj) const;
 };
 
 #endif

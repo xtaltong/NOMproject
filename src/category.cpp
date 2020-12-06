@@ -24,6 +24,13 @@ void Category::display() const {
     }
 }
 
+Tag* Category::find(string obj) const{
+    for (auto i : tags) {
+       if (i->name == obj)
+    }
+
+}
+
 // {side}
 // {American, fried}
 //             {potato}
