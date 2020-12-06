@@ -1,7 +1,7 @@
-#ifndef __TAG_HPP__
-#define __TAG_HPP__
+#include "tag.hpp"
 #include <vector>
 #include <iostream>
+#include "item.hpp"
 using namespace std;
 
 class Tag{
