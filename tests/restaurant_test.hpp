@@ -1,7 +1,7 @@
 #ifndef __RESTAURANT_TEST_HPP__
 #define __RESTAURANT_TEST_HPP__
 #include "gtest/gtest.h"
-#include "restaurant.hpp"
+#include "../header/restaurant.hpp"
 #include "item.hpp"
 TEST(RestaurantTest, BasicRestaurantTest) {
     Restaurant* test = new Restaurant("Chick-Fil-A");
