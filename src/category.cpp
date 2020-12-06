@@ -6,14 +6,14 @@ void Category::addTag(Tag* tag) {
     tags.push_back(tag);
 }
 
-void Category::removeTag(Tag* tag) {
-    for (unsigned int i = 0; i < tags.size(); i++) {
-        if (tags.at(i) == tag) {
-            tags.erase(tags.begin() + i);
-            return;
-        }
-    }
-}
+// void Category::removeTag(Tag* tag) {
+//     for (unsigned int i = 0; i < tags.size(); i++) {
+//         if (tags.at(i) == tag) {
+//             tags.erase(tags.begin() + i);
+//             return;
+//         }
+//     }
+// }
 
 void Category::display() const {
     cout << name;
@@ -24,12 +24,20 @@ void Category::display() const {
     }
 }
 
+string Category::getName() const{
+    return name;
+}
+
 Tag* Category::find(string obj) const{
     for (auto i : tags) {
-       if (i->name == obj)
+       if (i->getName() == obj){
+           return i;
+       }
+       i->find(obj);
     }
-
+    return nullptr;
 }
+
 
 // {side}
 // {American, fried}
