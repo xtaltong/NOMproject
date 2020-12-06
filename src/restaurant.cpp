@@ -24,7 +24,7 @@ Item* Restaurant::getItem(int index) const {
 
 void Restaurant::display() const {
     for (unsigned int i = 0; i < order.size(); i++) {
-        order.at(i).display();
+        order.at(i).displayItem();
         cout << endl;
     }
 }
