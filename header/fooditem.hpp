@@ -5,11 +5,11 @@
 #include "tag.hpp"
 using namespace std;
 
-class FoodItem{
+class FoodItem : public Tag{
     private:
         string name;
     public:
-        FoodItem();
+        FoodItem(string name);
         void display() const;
 };
 

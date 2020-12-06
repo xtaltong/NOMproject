@@ -7,12 +7,13 @@ using namespace std;
 
 class Category{
     private:
+        string name;
         vector<Tag*> tags;
     public:
         Category();
-        void addTag(Tag* tag);
-        void removeTag(int index);
-        void display() const;
+        virtual void addTag(Tag* tag);
+        virtual void removeTag(Tag* tag);
+        virtual void display() const;
 };
 
 #endif
