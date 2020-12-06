@@ -7,7 +7,7 @@ void Category::addTag(Tag* tag) {
 }
 
 void Category::removeTag(Tag* tag) {
-    for (unsigned int i = 0; i < order.size(); i++) {
+    for (unsigned int i = 0; i < tags.size(); i++) {
         if (order.at(i) == item) {
             order.erase(order.begin() + i);
             return;
