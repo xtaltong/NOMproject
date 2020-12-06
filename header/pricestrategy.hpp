@@ -15,14 +15,8 @@ class PriceStrategy : public Strategy {
         PriceStrategy(){}
 
         /*Pure Virtual Functions*/
-        void compare(Restaurant* restaurant){
-            string uberPrice = restaurant->priceBreakdown(uber);
-            string dashPrice = restaurant->priceBreakdown(dash); 
-        }
-        void print(){
-            cout << "UberEats Price: " << uberPrice;
-            cout << "DoorDash Price: " << dashPrice;
-        }
+        virtual void compare(Restaurant* restaurant);
+        virtual void print();
 };
 
 #endif //__PRICE_HPP__

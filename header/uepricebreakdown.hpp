@@ -6,6 +6,6 @@
 class UEPriceBreakdown : public PriceBreakdown {
 	public:
 		UEPriceBreakdown();
-		virtual void collectPriceMetadata();
+		virtual void collectPriceMetadata(Restaurant *);
 };
 #endif 

@@ -6,6 +6,6 @@
 class DDPriceBreakdown : public PriceBreakdown {
         public:
 		DDPriceBreakdown();
-                virtual void collectPriceMetadata();
+                virtual void collectPriceMetadata(Restaurant *);
 };
 #endif
