@@ -37,7 +37,15 @@ double Item::getPrice() const{
 void Item::addCategoryTag(string tag, string link = ""){
     Tag* t = new Category(tag);
     if (link != ""){
-        for (int i = 0; i < itemTag->tags; i++)
+        Tag* linker = itemTag->find(link);
+        if (linker != nullptr){
+            linker->addTag(t);
+            return;
+        }
+        else{
+            delete t;
+            return;
+        }
     }
     
     else {
@@ -45,8 +53,23 @@ void Item::addCategoryTag(string tag, string link = ""){
     }
 }
 
-void addFoodTag(string tag, string link = ""){
-
+void Item::addFoodTag(string tag, string link = ""){
+    Tag* t = new FoodItem(tag);
+    if (link != ""){
+        Tag* linker = itemTag->find(link);
+        if (linker != nullptr){
+            linker->addTag(t);
+            return;
+        }
+        else{
+            delete t;
+            return;
+        }
+    }
+    
+    else {
+        itemTag->addTag(t);
+    }
 }
 
 // addTag(string tag, string link = "") [
