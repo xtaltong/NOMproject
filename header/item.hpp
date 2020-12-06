@@ -19,6 +19,14 @@ class Item{
         double getPrice() const;
         void displayItem() const;
         bool operator==(const Item &otherItem) const;
+        // addTag(string tag, string link = "") [
+        //     Tag* t = new Tag(tag);
+        //     itemTag->addTag(t)
+        //     if (link != "") {
+        //         look for link
+        //         add item under it
+        //     }
+        // ]
 };
 
 #endif
