@@ -4,8 +4,8 @@ ADD_SUBDIRECTORY(googletest)
 
 SET(CMAKE_CXX_STANDARD 11)
 
-ADD_EXECUTABLE(restaurant_test
-	tests/restaurant_test.cpp
+ADD_EXECUTABLE(restaurant_test)
+	tests/restaurant_test.hpp
 	src/restaurant.cpp
 	src/item.cpp
 )
