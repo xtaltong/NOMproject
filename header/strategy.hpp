@@ -8,17 +8,18 @@
 class Restaurant;
 
 class Strategy {
-    private:
-        Factory* uefact = new UEDeliveryFactory();
-        Factory* ddfact = new DDDeliveryFactory();
+    protected:
+        Restaurant* rest;
+        Factory* uefact = new UEDeliveryFactory(rest);
+        Factory* ddfact = new DDDeliveryFactory(rest);
+
     public:
         /* Constructors */
-        Strategy() { };
-
+        Strategy(Restaurant* rest) : rest(rest) { };
 
         /* Pure Virtual Functions */
-        virtual void compare(Restaurant* restaurant) = 0;
-        virtual void print();
+        virtual void compare() = 0;
+        // virtual void print() = 0;
 };
 
 #endif //__STRATEGY_HPP__
