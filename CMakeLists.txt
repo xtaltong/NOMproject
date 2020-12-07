@@ -8,7 +8,7 @@ ADD_EXECUTABLE(restaurant_test
 	tests/restaurant_test.cpp
 	src/restaurant.cpp
 	src/item.cpp
-}
+)
 
 TARGET_LINK_LIBRARIES(test gtest)
 TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)
