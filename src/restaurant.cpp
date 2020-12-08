@@ -28,3 +28,11 @@ void Restaurant::display() const {
         cout << endl;
     }
 }
+
+string Restaurant::getRestaurantName() const{
+    return name;
+}
+
+vector<Item *> Restaurant::getOrder() const{
+    return order;
+}

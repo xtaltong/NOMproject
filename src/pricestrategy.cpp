@@ -1,5 +1,7 @@
 #include "../header/pricestrategy.hpp"
 #include "../header/pricebreakdown.hpp"
+#include <iostream>
+using namespace std;
 
 PriceStrategy::PriceStrategy(Restaurant* rest) Strategy(rest) {}
 
