@@ -12,17 +12,11 @@ class Restaurant;
 class TimeStrategy : public Strategy {
     public:
         /*Constructors*/
-        TimeStrategy(){}
+        TimeStrategy(Restaurant* rest){}
 
         /*Pure Virtual Functions*/
-        void compare(Restaurant* restaurant){
-            char uberTime = restaurant->timeBreakdown(uber);
-            char dashTime = restaurant->timeBreakdown(dash); 
-        }
-        void print(){
-            cout << "UberEats Delivery Time Estimate: " << uberTime;
-            cout << "DoorDash Delivery Time Estimate: " << dashTime;
-        }
+        virtual void compare();
+        //virtual void print();
 };
 
 #endif //__TIME_HPP__S
