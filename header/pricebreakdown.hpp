@@ -15,6 +15,19 @@ class PriceBreakdown {
 		vector<Fee> feeBreakdown;
 	public:
 		PriceBreakdown();
+		void sort() {
+			for (unsigned int i = 0; i + 1 < feeBreakdown.size(); i++) {
+				int min = i;
+				for (unsigned int j = i + 1; j < feeBreakdown.size(); j++) {
+					if (feeBreakdown.at(min)->feeType > feeBreakdown.at(j)->feeType) {
+						min = j;
+					}
+				}
+				Fee temp = feeBreakdown.at(min);
+				feeBreakdown.at(min) = feeBreakdown.at(i);
+				feeBreakdown.at(i) = temp;
+			}
+		};
 		virtual void collectPriceMetadata(Restaurant *) = 0;
 };
 #endif
