@@ -12,11 +12,11 @@ class Restaurant;
 class PriceStrategy : public Strategy {
     public:
         /*Constructors*/
-        PriceStrategy(){}
+        PriceStrategy(Restaurant* rest){};
 
         /*Pure Virtual Functions*/
-        virtual void compare(Restaurant* restaurant);
-        virtual void print();
+        virtual void compare();
+        // virtual void print();
 };
 
 #endif //__PRICE_HPP__

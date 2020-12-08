@@ -4,7 +4,7 @@
 
 DDPriceBreakdown::DDPriceBreakdown() {}
 
-void DDPriceBreakdown::collectPriceMetadata(Restaurant *rest) {
+vector<Fee> DDPriceBreakdown::collectPriceMetadata(Restaurant *rest) {
     for (auto i : rest->order) {
         //find its price from DD files and save it to the item
     }
