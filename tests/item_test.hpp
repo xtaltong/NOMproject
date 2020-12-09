@@ -30,7 +30,7 @@ TEST(ItemTest, SetterItemTest) {
     delete test2;
 }
 
-TEST(ItemTest, DisplayItemTest) {
+TEST(ItemTest, DisplayEqualityItemTest) {
     Item* test = new Item("Cream Puff", 1.50);
     test->displayItem();
     Item* test2 = new Item("Pudding", 1.50 );
