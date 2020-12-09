@@ -3,10 +3,10 @@
 #include <iostream>
 using namespace std;
 
-Item::Item(){}
+Item::Item(): name(""), price(-1) {}
 
 void Item::displayItem() const{
-    cout << "Item: " << this->name << " Price: $" << this->price << endl;
+    cout << "Item: " << this->name << ", Price: $" << this->price << endl;
 }
 
 bool Item::operator==(const Item &otherItem) const{
