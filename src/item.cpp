@@ -3,10 +3,10 @@
 #include <iostream>
 using namespace std;
 
-Item::Item(){}
+Item::Item(): name(""), price(-1) {}
 
 void Item::displayItem() const{
-    cout << "Item: " << this->name << " Price: $" << this->price << endl;
+    cout << "Item: " << this->name << ", Price: $" << this->price << endl;
 }
 
 bool Item::operator==(const Item &otherItem) const{
@@ -33,8 +33,8 @@ void Item::setPrice(double price){
 double Item::getPrice() const{
     return price;
 }
-
-void Item::addCategoryTag(string tag, string link = ""){
+/*
+void Item::addCategoryTag(string tag, string link){
     Tag* t = new Category(tag);
     if (link != ""){
         Tag* linker = itemTag->find(link);
@@ -53,7 +53,7 @@ void Item::addCategoryTag(string tag, string link = ""){
     }
 }
 
-void Item::addFoodTag(string tag, string link = ""){
+void Item::addFoodTag(string tag, string link){
     Tag* t = new FoodItem(tag);
     if (link != ""){
         Tag* linker = itemTag->find(link);
@@ -71,7 +71,7 @@ void Item::addFoodTag(string tag, string link = ""){
         itemTag->addTag(t);
     }
 }
-
+*/
 // addTag(string tag, string link = "") [
         //     Tag* t = new Tag(tag);
         //     itemTag->addTag(t)
