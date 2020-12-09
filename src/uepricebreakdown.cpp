@@ -1,11 +1,33 @@
 #include "../header/pricebreakdown.hpp"
 #include "../header/uepricebreakdown.hpp"
 #include "../header/restaurant.hpp"
+#include <fstream>
+#include <iostream>
+#include <sstream>
+#include <string>
+using namespace std;
 
 UEPriceBreakdown::UEPriceBreakdown() {}
 
 void UEPriceBreakdown::collectPriceMetadata(Restaurant *rest) {
-    for (auto i : rest->order) {
+    ifstream fin;
+    fin.open("../CSV/UberEats - Restauraunt List.csv");
+
+    if(!fin.is_open()){
+        throw runtime_error("Could not open File");
+    }
+    vector<string> row; 
+    string line, word, temp;
+    while(fin >> temp){
+        row.clear();
+        getline(fin,line);
+        istringstream ss(line);
+        while(ss >> word){
+            //finish later
+        }
+    }
+
+    for (auto i : rest->getOrder()) {
         //find its price from DD files and save it to the item
     }
     //get handling

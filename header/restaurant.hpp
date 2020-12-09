@@ -17,5 +17,7 @@ class Restaurant {
 		void removeItem(Item* );
 		Item* getItem(int ) const;
 		void display() const;
+		string getRestaurantName() const;
+		vector<Item *> getOrder() const;
 };
 #endif __RESTAURANT_HPP__
