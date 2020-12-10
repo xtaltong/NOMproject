@@ -1,6 +1,7 @@
 #include "../header/item.hpp"
 #include "../header/restaurant.hpp"
 #include <iostream>
+#include <vector>
 using namespace std;
 
 Restaurant::Restaurant(string name) : name(name) {}
@@ -42,4 +43,33 @@ string Restaurant::getRestaurantName() const{
 
 vector<Item *> Restaurant::getOrder() const{
     return order;
+}
+
+void Restaurant::printMenu(){
+    ifstream fin;
+    stringstream ss;
+    ss << "../CSV/DoorDash - " << this->name << ".csv"; 
+    string FILENAME = ss.str();
+    fin.open(FILENAME);
+
+    if(!fin.is_open()){
+        throw runtime_error("Could not open File");
+    }
+
+    string line, word, temp, colname;
+    
+    getline(fin, line);
+
+    stringstream ss(line);
+
+    while (getline(ss, word, ',')){
+        if (word != "Item"){
+            this->menu.push_back(word);
+        }
+    }
+
+    for (int i; i < menu.size(); i++){
+        cout << i + 1 << ": " << menu.at(i) << endl; 
+    }
+
 }
