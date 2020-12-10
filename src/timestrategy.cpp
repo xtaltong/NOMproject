@@ -1,13 +1,16 @@
 #include "../header/timestrategy.hpp"
 #include "../header/timebreakdown.hpp"
+using namespace std;
 
-TimeStrategy::TimeStrategy(Restaurant* rest) Strategy(rest) {}
+TimeStrategy::TimeStrategy(Restaurant* rest) : Strategy(rest) {}
 
 void TimeStrategy::compare(){
     TimeBreakdown* uepbd = uefact->createTimeBreakdown();
     TimeBreakdown* ddpbd = ddfact->createTimeBreakdown();
-    vector<Fee> uefees = uepbd->collectTimeMetadata();
-    vector<Fee> ddfees = ddpbd->collectTimeMetadata();
+    uepbd->collectTimeMetadata(rest);
+    ddpbd->collectTimeMetadata(rest);
+    vector<Fee> uefees = uepbd->getFees();
+    vector<Fee> ddfees = ddpbd->getFees();
 
     cout << "Restaurant: " << rest->name << endl;
     cout << "Order: " << endl;

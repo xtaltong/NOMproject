@@ -1,22 +1,23 @@
 #include "../header/pricestrategy.hpp"
 #include "../header/pricebreakdown.hpp"
-#include <iostream>
 using namespace std;
 
-PriceStrategy::PriceStrategy(Restaurant* rest) Strategy(rest) {}
+PriceStrategy::PriceStrategy(Restaurant* rest) : Strategy(rest) {}
 
 void PriceStrategy::compare(){
     PriceBreakdown* uepbd = uefact->createPriceBreakdown();
     PriceBreakdown* ddpbd = ddfact->createPriceBreakdown();
-    vector<Fee> uefees = uepbd->collectPriceMetadata();
-    vector<Fee> ddfees = ddpbd->collectPriceMetadata();
+    uepbd->collectPriceMetadata(rest);
+    ddpbd->collectPriceMetadata(rest);
+    vector<Fee> uefees = uepbd->getFees();
+    vector<Fee> ddfees = ddpbd->getFees();
 
-    cout << "Restaurant: " << rest->name << endl;
+    cout << "Restaurant: " << rest->getRestaurantName() << endl;
     cout << "Order: " << endl;
     double orderSum = 0;
-    for (auto i : rest->order) {
-        cout << i->name " - $" << i->price << endl; 
-        orderSum += i->price;
+    for (auto i : rest->getOrder()) {
+        cout << i->getName() << " - $" << i->getPrice() << endl; 
+        orderSum += i->getPrice();
     }
     cout << endl;
     cout << "Cost - $" << orderSum << endl << endl;
@@ -24,8 +25,8 @@ void PriceStrategy::compare(){
     cout << "UberEats: " << endl;
     double feeSum = 0;
     for (auto i : uefees) {
-        cout << i->feeType << " - $" << i->price << endl;
-        feeSum += i->price();
+        cout << i.feeType << " - $" << i.price << endl;
+        feeSum += i.price;
     }
     cout << endl;
     cout << "Total Cost - $" << orderSum + feeSum << endl;
@@ -34,8 +35,8 @@ void PriceStrategy::compare(){
     cout << "DoorDash: " << endl;
     feeSum = 0;
     for (auto i : ddfees) {
-        cout << i->feeType << " - $" << i->price << endl;
-        feeSum += i->price();
+        cout << i.feeType << " - $" << i.price << endl;
+        feeSum += i.price;
     }
     cout << endl;
     cout << "Total Cost - $" << orderSum + feeSum << endl;

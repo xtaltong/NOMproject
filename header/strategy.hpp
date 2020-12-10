@@ -2,9 +2,12 @@
 #define __STRATEGY_HPP__
 
 #include <string>
+#include <iostream>
 /*#include "delivery.hpp"
 #include "restaurant.hpp"*/
 #include "factory.hpp"
+using namespace std;
+
 class Restaurant;
 
 class Strategy {

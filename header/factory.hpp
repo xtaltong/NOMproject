@@ -3,7 +3,11 @@
 
 /*#include API info*/
 #include "pricebreakdown.hpp"
+#include "uepricebreakdown.hpp"
+#include "ddpricebreakdown.hpp"
 #include "timebreakdown.hpp"
+#include "uetimebreakdown.hpp"
+#include "ddtimebreakdown.hpp"
 #include "restaurant.hpp"
 
 class Factory {
@@ -14,8 +18,8 @@ class Factory {
     public:
         /* Pure Virtual Functions */
         Factory(Restaurant* rest) : rest(rest) {};
-        virtual void createPriceBreakdown() = 0;
-        virtual void createTimeBreakdown() = 0;
+        virtual PriceBreakdown* createPriceBreakdown() = 0;
+        virtual TimeBreakdown* createTimeBreakdown() = 0;
         // virtual void createRestaurantList() = 0;
 };
 
