@@ -12,7 +12,7 @@ class Restaurant;
 class TimeStrategy : public Strategy {
     public:
         /*Constructors*/
-        TimeStrategy(Restaurant* rest){}
+        TimeStrategy(Restaurant* rest);
 
         /*Pure Virtual Functions*/
         virtual void compare();
