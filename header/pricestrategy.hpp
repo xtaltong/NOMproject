@@ -12,7 +12,7 @@ class Restaurant;
 class PriceStrategy : public Strategy {
     public:
         /*Constructors*/
-        PriceStrategy(Restaurant* rest){};
+        PriceStrategy(Restaurant* rest);
 
         /*Pure Virtual Functions*/
         virtual void compare();
