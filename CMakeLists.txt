@@ -10,6 +10,8 @@ ADD_EXECUTABLE(test
 	src/item.cpp	
 	tests/restaurant_test.hpp
 	src/restaurant.cpp
+	src/fooditem.cpp
+	src/category.cpp
 )
 
 ADD_EXECUTABLE(compositeTest

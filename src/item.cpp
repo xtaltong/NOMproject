@@ -1,9 +1,11 @@
 #include "../header/item.hpp"
 #include "../header/tag.hpp"
+#include "../header/fooditem.hpp"
+#include "../header/category.hpp"
 #include <iostream>
 using namespace std;
 
-Item::Item(): name(""), price(-1) {}
+Item::Item(): name(""), price(-1), itemTag(nullptr) {}
 
 void Item::displayItem() const{
     cout << this->name << " - $" << this->price << endl;
@@ -40,14 +42,14 @@ void Item::addCategoryTag(string tag, string link){
         Tag* linker = itemTag->find(link);
         if (linker != nullptr){
             linker->addTag(t);
-            return;
+            //return;
         }
         else{
             delete t;
-            return;
+            //return;
         }
-    }
-    
+	return;
+    } 
     else {
         itemTag->addTag(t);
     }
