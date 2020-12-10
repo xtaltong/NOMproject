@@ -5,4 +5,4 @@ Makefile
 lib/
 
 test
-restaurant_test
+compositeTest
