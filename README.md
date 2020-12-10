@@ -77,7 +77,7 @@
   * git submodule update --init --recursive
   * cmake3 .
   * make
-  * ./main.cpp
+  * ./NOM
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
 * We wrote unit tests to test functions in individual classes, and we also wrote tests that tested design patterns as a whole. We made sure to test integrating different design patterns and classes so that any dependencies do work. 
