@@ -1,4 +1,4 @@
-#include "category.hpp"
+#include "../header/category.hpp"
 
 Category::Category(string name) : name(name) {}
 

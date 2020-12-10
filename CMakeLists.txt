@@ -12,5 +12,15 @@ ADD_EXECUTABLE(test
 	src/restaurant.cpp
 )
 
+ADD_EXECUTABLE(compositeTest
+	tests/composite_test.cpp
+	tests/tag_test.hpp
+        src/item.cpp
+        src/restaurant.cpp
+        src/fooditem.cpp
+	src/category.cpp
+)
+
 TARGET_LINK_LIBRARIES(test gtest)
+TARGET_LINK_LIBRARIES(compositeTest gtest)
 TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)

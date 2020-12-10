@@ -2,6 +2,7 @@
 #define __ITEM_HPP__
 #include <vector>
 #include <iostream>
+#include <string>
 #include "tag.hpp"
 #include "category.hpp"
 #include "fooditem.hpp"
