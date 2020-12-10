@@ -29,6 +29,7 @@ class PriceBreakdown {
 			}
 		};
 		virtual void collectPriceMetadata(Restaurant *) = 0;
+		vector<Fee> getFees() const {return feeBreakdown;}; 
 };
 #endif
 
