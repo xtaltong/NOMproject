@@ -20,4 +20,4 @@ class Restaurant {
 		string getRestaurantName() const;
 		vector<Item *> getOrder() const;
 };
-#endif __RESTAURANT_HPP__
+#endif // __RESTAURANT_HPP__

@@ -8,6 +8,8 @@ ADD_EXECUTABLE(test
 	tests/unit_test.cpp
 	tests/item_test.hpp
 	src/item.cpp	
+	tests/restaurant_test.hpp
+	src/restaurant.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest)
