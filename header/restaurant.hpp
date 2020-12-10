@@ -3,13 +3,19 @@
 
 #include "item.hpp"
 #include <vector>
+#include <fstream>
 #include <iostream>
+#include <sstream>
+#include <string>
+#include <stdlib.h>
+
 using namespace std;
 
 class Restaurant {
 	private:
 		string name;
 		vector<Item *> order;
+		vector<string> menu; 
 
 	public:
 		Restaurant(string name);
@@ -19,5 +25,7 @@ class Restaurant {
 		void display() const;
 		string getRestaurantName() const;
 		vector<Item *> getOrder() const;
+		void printMenu();
+		vector<string> getMenu() const {return menu;};
 };
 #endif // __RESTAURANT_HPP__
