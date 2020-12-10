@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 
 #include "item_test.hpp"
-//#include "restaurant_test.hpp"
+#include "restaurant_test.hpp"
 
 
 int main(int argc, char **argv) {

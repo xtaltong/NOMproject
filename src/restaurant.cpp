@@ -19,14 +19,21 @@ void Restaurant::removeItem(Item* item) {
 }
 
 Item* Restaurant::getItem(int index) const {
-    return order.at(index);
+    if (index >= 0 && index < order.size()) {
+        return order.at(index);
+    }
+    else {
+        return nullptr;
+    }
 }
 
 void Restaurant::display() const {
+    cout << "Restaurant: " << name << endl;
+    cout << "ORDER" << endl;
     for (unsigned int i = 0; i < order.size(); i++) {
-        order.at(i)->displayItem();
-        cout << endl;
+	order.at(i)->displayItem();
     }
+    cout << endl;
 }
 
 string Restaurant::getRestaurantName() const{
