@@ -33,7 +33,7 @@ void Item::setPrice(double price){
 double Item::getPrice() const{
     return price;
 }
-/*
+
 void Item::addCategoryTag(string tag, string link){
     Tag* t = new Category(tag);
     if (link != ""){
@@ -71,7 +71,7 @@ void Item::addFoodTag(string tag, string link){
         itemTag->addTag(t);
     }
 }
-*/
+
 // addTag(string tag, string link = "") [
         //     Tag* t = new Tag(tag);
         //     itemTag->addTag(t)

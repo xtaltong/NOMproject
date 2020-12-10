@@ -21,8 +21,8 @@ class Item{
         double getPrice() const;
         void displayItem() const;
         bool operator==(const Item &otherItem) const;
-//        void addCategoryTag(string tag, string link = "");
-//        void addFoodTag(string tag, string link = "");
+        void addCategoryTag(string tag, string link = "");
+        void addFoodTag(string tag, string link = "");
         // addTag(string tag, string link = "") [
         //     Tag* t = new Tag(tag);
         //     itemTag->addTag(t)
