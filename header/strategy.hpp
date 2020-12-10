@@ -13,8 +13,8 @@ class Restaurant;
 class Strategy {
     protected:
         Restaurant* rest;
-        Factory* uefact = new UEDeliveryFactory(rest);
-        Factory* ddfact = new DDDeliveryFactory(rest);
+        Factory* uefact = new UberEatsFactory(rest);
+        Factory* ddfact = new DoorDashFactory(rest);
 
     public:
         /* Constructors */
