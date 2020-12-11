@@ -21,7 +21,7 @@
  > * Why is it important or interesting to you?
 * Food delivery apps are heavily relied on by the college student populace, but has skyrocketed in popularity due to recent events. As a program that could be useful to people who use delivery, we wanted to create something that could be functional and relevant to people's needs today. Because food is a interesting topic to us, we wanted to design this so that people could have an easier time comparing their options when ordering delivery.
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- * Movk API's represented by CSV files
+ * Mock API's represented by CSV files
  * C++
  > * What will be the input/output of your project?
 * The input will be the name of a food place and item name(s). Using this information, the program should gather information from various food delivery systems and show the comparisons between these food apps. User may also choose to add tags to the items they order; they can also choose how they want to see the breakdown of the delivery apps options. If time allows, another extra feature could be to list several restaurant options given the current location of the user and provide corresponding comparisons of delivery apps based on the generated list.
