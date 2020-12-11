@@ -7,16 +7,16 @@ TimeStrategy::TimeStrategy(Restaurant* rest) : Strategy(rest) {}
 void TimeStrategy::compare(){
     TimeBreakdown* uepbd = uefact->createTimeBreakdown();
     TimeBreakdown* ddpbd = ddfact->createTimeBreakdown();
-    uepbd->collectTimeMetadata(rest);
-    ddpbd->collectTimeMetadata(rest);
-    vector<Fee> uefees = uepbd->getFees();
-    vector<Fee> ddfees = ddpbd->getFees();
+    uepbd->collectTimeMetaData(rest);
+    ddpbd->collectTimeMetaData(rest);
+    vector<Time> ueTime = uepbd->getTimes();
+    vector<Time> ddTime = ddpbd->getTimes();
 
-    cout << "Restaurant: " << rest->name << endl;
+    cout << "Restaurant: " << rest->getRestaurantName() << endl;
     cout << "Order: " << endl;
     // double orderSum = 0;
-    for (auto i : rest->order) {
-        cout << i->name " - $" << i->price << endl; 
+    for (auto i : rest->getOrder()) {
+        cout << i->getName() << " - $" << i->getPrice() << endl; 
         // orderSum += i->price;
     }
     cout << endl;
@@ -25,8 +25,8 @@ void TimeStrategy::compare(){
     cout << "UberEats: " << endl;
     double timeSum = 0;
     for (auto i : ueTime) {
-        cout << i->timeType << " - $" << i->duration << endl;
-        timeSum += i->duration;
+        cout << i.timeType << " - $" << i.time << endl;
+        timeSum += i.time;
     }
     cout << endl;
     cout << "Total Time - " << timeSum << endl;
@@ -34,12 +34,12 @@ void TimeStrategy::compare(){
     
     cout << "DoorDash: " << endl;
     timeSum = 0;
-    for (auto i : ddfees) {
-        cout << i->timeType << " - $" << i->duration << endl;
-        timeSum += i->duration();
+    for (auto i : ddTime) {
+        cout << i.timeType << " - $" << i.time << endl;
+        timeSum += i.time;
     }
     cout << endl;
-    cout << "Total Cost - " << timeSum << endl;
+    cout << "Total Time - " << timeSum << endl;
     cout << endl;
     // string uberPrice = restaurant->priceBreakdown(uber);
     // string dashPrice = restaurant->priceBreakdown(dash); 
