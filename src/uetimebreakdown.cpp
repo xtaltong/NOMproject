@@ -10,7 +10,7 @@ using namespace std;
 
 UETimeBreakdown::UETimeBreakdown() {}
 
-void UETimeBreakdown::collectPriceMetadata(Restaurant *rest) {
+void UETimeBreakdown::collectTimeMetadata(Restaurant *rest) {
     ifstream fin;
     fin.open("../CSV/UberEats - Restauraunt List.csv");
 
@@ -39,10 +39,9 @@ void UETimeBreakdown::collectPriceMetadata(Restaurant *rest) {
     fin.close();
     
     // calculate time needed to prepare food
-    //int foodPrep = rest->numItems() * 2;
-    
-    //Time cooking("Cooking", foodPrep);
-    //timeBreakdown.push_back(foodPrep);
+    int foodPrep = rest->getOrder().size() * 2;
+    Time cooking("Cooking", foodPrep);
+    timeBreakdown.push_back(cooking);
 
     int deliveryTime = stoi(row[4]);
     Time delivery("Delivery", deliveryTime);
