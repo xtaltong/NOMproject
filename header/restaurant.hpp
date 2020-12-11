@@ -15,7 +15,7 @@ class Restaurant {
 	private:
 		string name;
 		vector<Item *> order;
-		vector<string> menu; 
+		vector<Item *> menu; 
 
 	public:
 		Restaurant(string name);
@@ -25,7 +25,8 @@ class Restaurant {
 		void display() const;
 		string getRestaurantName() const;
 		vector<Item *> getOrder() const;
+		void createMenu();
 		void printMenu();
-		vector<string> getMenu() const {return menu;};
+		Item* getMenuItem(int ) const;
 };
 #endif // __RESTAURANT_HPP__
