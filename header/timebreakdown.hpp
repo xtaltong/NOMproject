@@ -15,7 +15,7 @@ class TimeBreakdown{
 
     public:
         TimeBreakdown();
-        virtual void collectTimeMetaData() = 0;
+        virtual void collectTimeMetaData(Restaurant *) = 0;
 };
 
 #endif
