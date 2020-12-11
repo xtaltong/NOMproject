@@ -3,10 +3,7 @@
 
 #include <iostream>
 #include <vector>
-<<<<<<< Updated upstream
 #include "restaurant.hpp"
-=======
->>>>>>> Stashed changes
 using namespace std;
 
 struct Fee {
