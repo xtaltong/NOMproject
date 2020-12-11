@@ -7,7 +7,7 @@ PriceBreakdown* UberEatsFactory::createPriceBreakdown() {
     return pbd;
 }
 
-void UberEatsFactory::createTimeBreakdown() {
+TimeBreakdown* UberEatsFactory::createTimeBreakdown() {
     tbd = new UETimeBreakdown();
     return tbd;
 }
@@ -18,12 +18,12 @@ void UberEatsFactory::createTimeBreakdown() {
 
 DoorDashFactory::DoorDashFactory(Restaurant* rest) : Factory(rest) {}
 
-void DoorDashFactory::createPriceBreakdown() {
+PriceBreakdown* DoorDashFactory::createPriceBreakdown() {
     pbd = new DDPriceBreakdown();
     return pbd;
 }
 
-void DoorDashFactory::createTimeBreakdown() {
+TimeBreakdown* DoorDashFactory::createTimeBreakdown() {
     tbd = new DDTimeBreakdown();
     return tbd;
 }
