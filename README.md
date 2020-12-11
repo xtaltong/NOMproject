@@ -21,7 +21,7 @@
  > * Why is it important or interesting to you?
 * Food delivery apps are heavily relied on by the college student populace, but has skyrocketed in popularity due to recent events. As a program that could be useful to people who use delivery, we wanted to create something that could be functional and relevant to people's needs today. Because food is a interesting topic to us, we wanted to design this so that people could have an easier time comparing their options when ordering delivery.
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- * Movk API's represented by CSV files
+ * Mock API's represented by CSV files
  * C++
  > * What will be the input/output of your project?
 * The input will be the name of a food place and item name(s). Using this information, the program should gather information from various food delivery systems and show the comparisons between these food apps. User may also choose to add tags to the items they order; they can also choose how they want to see the breakdown of the delivery apps options. If time allows, another extra feature could be to list several restaurant options given the current location of the user and provide corresponding comparisons of delivery apps based on the generated list.
@@ -69,6 +69,13 @@
  > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
  ## Screenshots
  > Screenshots of the input/output after running your application
+ <img src="images/startMenu.png?raw=true" width="300">
+ <img src="images/checkMenu.png?raw=true" width="300">
+ <img src="images/addItemNoTag.png?raw=true" width="300">
+ <img src="images/addItemWithTag.png?raw=true" width="300">
+ <img src="images/viewOrder.png?raw=true" width="300">
+ <img src="images/removeItem.png?raw=true" width="300">
+ <img src="images/priceCompare.png?raw=true" width="300">
  ## Installation/Usage
  > Instructions on installing and running your application
   * git clone https://github.com/cs100/final-project-ctong011-echen111-spoye001.git
