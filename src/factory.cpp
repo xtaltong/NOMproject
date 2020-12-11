@@ -192,11 +192,19 @@ void DoorDashFactory::createPriceBreakdown() {
     }
     ss.str("");
     ss.clear();
-    vector <string> fee;
+    vector <string> Dfee;
     getline(fin,line);
     ss << line;
     while (getline(ss, word, ',')){
-        distance.push_back(word);
+        Dfee.push_back(word);
+    }
+    ss.str("");
+    ss.clear();
+    vector <string> Sfee;
+    getline(fin,line);
+    ss << line;
+    while (getline(ss, word, ',')){
+        Sfee.push_back(word);
     }
         // int columnIdx = 0;
         // while(ss >> word){
@@ -229,11 +237,11 @@ void DoorDashFactory::createPriceBreakdown() {
     Fee tax("Tax", tFee);
     feeBreakdown.push_back(tax);
     //service fee = servicefee% x subtotal
-    double servFee = subtotal * stod(column[4]);
+    double servFee = subtotal * stod(Sfee.at(index));
     Fee serviceFee("Service", servFee);
     feeBreakdown.push_back(serviceFee);
     //delivery fee = fee x distance
-    double dFee = stod(column[2]) * stod(column[1]);
+    double dFee = stod(distance.at(index)) * stod(distance.at(index));
     Fee deliveryFee("Delivery", dFee);
     feeBreakdown.push_back(deliveryFee);
     // pbd = new DDPriceBreakdown();
@@ -248,31 +256,70 @@ void DoorDashFactory::createTimeBreakdown() {
     }
     vector<string> column; 
     string line, word, temp;
-    getline(fin, line);
-    istringstream ss(line);
-    int colIdx = 0;
-    while(ss >> word){
-        if(word == rest->getRestaurantName()){
-            column.push_back(word);
-            break;
-        }
-        else{
-            if(ss.peek() == ',') ss.ignore();
-            colIdx++;
-        }
+    stringstream ss;
+
+    getline(fin,line);
+    ss << line;
+    while (getline(ss, word, ',')){
+        column.push_back(word);
     }
-    while(getline(fin,line)){
-        int columnIdx = 0;
-        while(ss >> word){
-            if(columnIdx == colIdx){
-                column.push_back(word);
-                if(ss.peek() == ',') ss.ignore();
-            }
-            else{
-                columnIdx++;
-            }
+    int index = 0;
+    for(auto i : column){
+        if(i != rest->getRestaurantName()){
+            index++;
         }
+        else{break;}
     }
+    ss.str("");
+    ss.clear();
+
+    getline(fin,line);
+    ss << line;
+
+    ss.str("");
+    ss.clear();
+
+    getline(fin,line);
+    ss << line;
+
+    ss.str("");
+    ss.clear();
+
+    getline(fin,line);
+    ss << line;
+
+    ss.str("");
+    ss.clear();
+
+    vector <string> time;
+    getline(fin,line);
+    ss << line;
+    while (getline(ss, word, ',')){
+        time.push_back(word);
+    }
+    // int colIdx = 0;
+    // while(ss >> word){
+    //     if(word == rest->getRestaurantName()){
+    //         column.push_back(word);
+    //         break;
+    //     }
+    //     else{
+    //         if(ss.peek() == ',') ss.ignore();
+    //         colIdx++;
+    //     }
+    // }
+    // while(getline(fin,line)){
+    //     int columnIdx = 0;
+    //     while(ss >> word){
+    //         if(columnIdx == colIdx){
+    //             column.push_back(word);
+    //             if(ss.peek() == ',') ss.ignore();
+    //         }
+    //         else{
+    //             columnIdx++;
+    //         }
+    //     }
+    // }
 
     fin.close();
 
@@ -281,13 +328,12 @@ void DoorDashFactory::createTimeBreakdown() {
     Time cooking("Cooking", foodPrep);
     timeBreakdown.push_back(cooking);
 
-    int deliveryTime = stoi(column[4]);
+    int deliveryTime = stoi(time.at(index));
     Time delivery("Delivery", deliveryTime);
     timeBreakdown.push_back(delivery);
     // tbd = new DDTimeBreakdown();
     // return tbd;
 }
-
 // void DoorDashFactory::createRestaurantList() {
 
 // }
