@@ -55,7 +55,7 @@ vector<Item *> Restaurant::getOrder() const{
 void Restaurant::createMenu(){
     ifstream fin;
     stringstream ss;
-    ss << "../CSV/DoorDash - " << this->name << ".csv"; 
+    ss << "CSV/DoorDash - " << this->name << ".csv"; 
     string FILENAME = ss.str();
     fin.open(FILENAME);
     ss.str("");
@@ -77,7 +77,7 @@ void Restaurant::createMenu(){
 
         if (tempV.at(0) == "Item"){
             tempV.erase(tempV.begin());
-            for (int i = 1; i < tempV.size(); i++){
+            for (int i = 0; i < tempV.size(); i++){
                 Item* item = new Item(tempV.at(i), -1);
                 menu.push_back(item);
             }
@@ -97,7 +97,7 @@ void Restaurant::createMenu(){
 
         if (tempV.at(0) == "Price"){
             tempV.erase(tempV.begin());
-            for (int i = 1; i < tempV.size(); i++){
+            for (int i = 0; i < tempV.size(); i++){
                 menu.at(i)->setPrice(stod(tempV.at(i)));
             }
             tempV.clear();
