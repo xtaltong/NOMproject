@@ -5,7 +5,7 @@ ADD_SUBDIRECTORY(googletest)
 SET(CMAKE_CXX_STANDARD 11)
 
 ADD_EXECUTABLE(NOM
-	src/main.cpp
+	main.cpp
 	src/category.cpp
 	src/fooditem.cpp
 	src/item.cpp
