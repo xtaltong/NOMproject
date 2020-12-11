@@ -2,6 +2,7 @@
 #define __TIMEBREAKDOWN_HPP__
 #include <vector>
 #include <iostream>
+#include "restaurant.hpp"
 using namespace std;
 
 struct Time {
