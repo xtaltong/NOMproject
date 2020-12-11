@@ -80,7 +80,7 @@ TEST(TagTest, ItemTagTest) {
 	item1->addCategoryTag("Chicken", "Meat");
 	item1->addFoodTag("Chicken Sandwich", "Sandwich");
 	item1->addCategoryTag("Fast Food");
-	item1->addFoodTag("Drink");
+	item2->addFoodTag("Drink");
 
 	item1->displayItem();	
 	item2->displayItem();
