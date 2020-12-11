@@ -14,6 +14,7 @@ using namespace std;
 class Restaurant {
 	private:
 		string name;
+		double subtotal = 0;
 		vector<Item *> order;
 		vector<Item *> menu; 
 
@@ -22,6 +23,7 @@ class Restaurant {
 		void addItem(Item* );
 		void removeItem(Item* );
 		Item* getItem(int ) const;
+		double getSubtotal() const;
 		void display() const;
 		string getRestaurantName() const;
 		vector<Item *> getOrder() const;
