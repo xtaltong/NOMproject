@@ -8,12 +8,14 @@ Restaurant::Restaurant(string name) : name(name) {}
 
 void Restaurant::addItem(Item* item) {
     order.push_back(item);
+    subtotal += item->getPrice();
 }
 
 void Restaurant::removeItem(Item* item) {
     for (unsigned int i = 0; i < order.size(); i++) {
         if (order.at(i) == item) {
-            order.erase(order.begin() + i);
+            subtotal -= item->getPrice();
+	    order.erase(order.begin() + i);
             return;
         }
     }
@@ -28,6 +30,10 @@ Item* Restaurant::getItem(int index) const {
     }
 }
 
+double Restaurant::getSubtotal() const {
+	return subtotal;
+}
+
 void Restaurant::display() const {
     cout << "Restaurant: " << name << endl;
     cout << "ORDER" << endl;
@@ -35,6 +41,7 @@ void Restaurant::display() const {
 	order.at(i)->displayItem();
     }
     cout << endl;
+    cout << "SUBTOTAL - $" << subtotal << endl;
 }
 
 string Restaurant::getRestaurantName() const{
