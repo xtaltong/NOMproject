@@ -58,7 +58,8 @@ void Restaurant::createMenu(){
     ss << "../CSV/DoorDash - " << this->name << ".csv"; 
     string FILENAME = ss.str();
     fin.open(FILENAME);
-
+    ss.str("");
+    ss.clear();
     if(!fin.is_open()){
         throw runtime_error("Could not open File");
     }
