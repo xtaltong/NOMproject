@@ -11,17 +11,17 @@ void PriceStrategy::compare(){
     // ddpbd->collectPriceMetadata(rest);
     vector<Fee> uefees = uefact->getFees();
     vector<Fee> ddfees = ddfact->getFees();
-
-    cout << "Restaurant: " << rest->getRestaurantName() << endl;
-    cout << "Order: " << endl;
-    double orderSum = 0;
-    for (auto i : rest->getOrder()) {
-        cout << i->getName() << " - $" << i->getPrice() << endl; 
-        orderSum += i->getPrice();
-    }
-    cout << endl;
-    cout << "Cost - $" << orderSum << endl << endl;
-
+    rest->display();
+    // cout << "Restaurant: " << rest->getRestaurantName() << endl;
+    // cout << "Order: " << endl;
+    // double orderSum = 0;
+    // for (auto i : rest->getOrder()) {
+    //     cout << i->getName() << " - $" << i->getPrice() << endl; 
+    //     orderSum += i->getPrice();
+    // }
+    // cout << endl;
+    // cout << "Cost - $" << orderSum << endl << endl;
+    double orderSum = rest->getSubtotal();
     cout << "UberEats: " << endl;
     double feeSum = 0;
     for (auto i : uefees) {

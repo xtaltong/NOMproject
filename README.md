@@ -69,6 +69,13 @@
  > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
  ## Screenshots
  > Screenshots of the input/output after running your application
+ <img src="images/startMenu.png?raw=true" width="300">
+ <img src="images/checkMenu.png?raw=true" width="300">
+ <img src="images/addItemNoTag.png?raw=true" width="300">
+ <img src="images/addItemWithTag.png?raw=true" width="300">
+ <img src="images/viewOrder.png?raw=true" width="300">
+ <img src="images/removeItem.png?raw=true" width="300">
+ <img src="images/priceCompare.png?raw=true" width="300">
  ## Installation/Usage
  > Instructions on installing and running your application
   * git clone https://github.com/cs100/final-project-ctong011-echen111-spoye001.git
