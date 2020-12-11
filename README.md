@@ -76,9 +76,10 @@
   * cmake3 .
   * make
   * ./NOM
- > Usage of application
-  * First, user will be shown several restaurant options in which they can choose one.
-  * Then, user will be able to select their order from the restaurant they chose.
+ > Usage of application: This application is for people to see a comparison between different delivery apps for their food orders.
+  * First, user will be shown several restaurant options in which they can choose one by selecting the corresponding number to the list displayed.
+  * Then, user will be able to select their order from the restaurant they chose, where a menu from that restaurant is displayed with its items and prices shown.
+  * User can choose a few different actions based on the list shown by selecting corresponding numbers. Part of the tasks of the program is to support the following:
   * User can add tags to each item they want to order if they would like, but it is not necessary.
   * User can choose if they would prefer to see a breakdown of the delivery apps based on costs or time.
   * Output: User will be able to see their order, along with the associated costs, as well as the breakdown of the 2 delivery apps based on the option they chose before.
