@@ -4,6 +4,14 @@ ADD_SUBDIRECTORY(googletest)
 
 SET(CMAKE_CXX_STANDARD 11)
 
+ADD_EXECUTABLE(NOM
+	main.cpp
+	category.cpp
+	fooditem.cpp
+	item.cpp
+	restaurant.cpp
+)
+
 ADD_EXECUTABLE(test
 	tests/unit_test.cpp
 	tests/item_test.hpp
