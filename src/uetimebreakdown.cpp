@@ -10,7 +10,7 @@ using namespace std;
 
 UETimeBreakdown::UETimeBreakdown() {}
 
-void UETimeBreakdown::collectTimeMetadata(Restaurant *rest) {
+void UETimeBreakdown::collectTimeMetaData(Restaurant *rest) {
     ifstream fin;
     fin.open("../CSV/UberEats - Restauraunt List.csv");
 
@@ -45,5 +45,5 @@ void UETimeBreakdown::collectTimeMetadata(Restaurant *rest) {
 
     int deliveryTime = stoi(row[4]);
     Time delivery("Delivery", deliveryTime);
-    timeBreakdown.push_back(deliveryTime);
+    timeBreakdown.push_back(delivery);
 }
