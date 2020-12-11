@@ -66,45 +66,62 @@ void Restaurant::createMenu(){
     vector <string> tempV;
     string line, word, temp;
 
-    while (fin >> temp){
-        getline(fin, line);
-
-        stringstream ss(line);
-
-        while (getline(ss, word, ',')){
-            tempV.push_back(word);
-        }
-
-        if (tempV.at(0) == "Item"){
-            tempV.erase(tempV.begin());
-            for (int i = 0; i < tempV.size(); i++){
-                Item* item = new Item(tempV.at(i), -1);
-                menu.push_back(item);
-            }
-            tempV.clear();
-            break;
+    getline(fin,line);
+    ss << line;
+    while (getline(ss, word, ',')){
+        tempV.push_back(word);
+    }
+    if (tempV.at(0) == "Item"){
+        tempV.erase(tempV.begin());
+        for (int i = 0; i < tempV.size(); i++){
+            Item* item = new Item(tempV.at(i), -1);
+            menu.push_back(item);
         }
     }
+    ss.str("");
+    ss.clear();
+    tempV.clear();
+    // while (fin >> temp){
+    //     getline(fin, line);
+    //     stringstream ss(line);
 
-    while (fin >> temp){
-        getline(fin, line);
-
-        stringstream ss(line);
-
-        while (getline(ss, word, ',')){
-            tempV.push_back(word);
-        }
-
-        if (tempV.at(0) == "Price"){
-            tempV.erase(tempV.begin());
-            for (int i = 0; i < tempV.size(); i++){
-                menu.at(i)->setPrice(stod(tempV.at(i)));
-            }
-            tempV.clear();
-            break;
+    //     while (getline(ss, word, ',')){
+    //         tempV.push_back(word);
+    //     }
+    //     for (int i = 0; i < tempV.size(); i++){
+    //         Item* item = new Item(tempV.at(i), -1);
+    //         menu.push_back(item);
+    //     }
+    //     tempV.clear();
+    //     break;
+    // }
+    getline(fin,line);
+    ss << line;
+    while (getline(ss, word, ',')){
+        tempV.push_back(word);
+    }
+    if (tempV.at(0) == "Price"){
+        tempV.erase(tempV.begin());
+        for (int i = 0; i < tempV.size(); i++){
+            menu.at(i)->setPrice(stod(tempV.at(i)));
         }
     }
-    fin.close();
+//     while (fin >> temp){
+//         getline(fin, line);
+
+//         stringstream ss(line);
+
+//         while (getline(ss, word, ',')){
+//             tempV.push_back(word);
+//         }
+
+//         for (int i = 0; i < tempV.size(); i++){
+//             menu.at(i)->setPrice(stod(tempV.at(i)));
+//         }
+//         tempV.clear();
+//         break;
+//     }
+//     fin.close();
 }
 
 void Restaurant::printMenu(){
