@@ -25,17 +25,65 @@ TEST(CategoryTest, BasicCategoryTest) {
 
 TEST(CategoryTest, ComplexCategoryTest) {
 	Tag* test = new Category("Sandwich");
+	Tag* newTag = new FoodItem("Chicken Sandwich");
 	EXPECT_EQ(test->find("Sandwich"), nullptr);
+	test->addTag(newTag);
+	EXPECT_EQ(test->find("Chicken Sandwich"), newTag);
+	EXPECT_EQ(test->find("Sandwich"), nullptr);
+	test->display();
 }
-  
-/*
-TEST(TagTest, BasicTagTest) {
-    Restaurant* test = new Restaurant("Chick-Fil-A");
-    Item* item1 = new Item("Chicken Sandwich", 5.99);
-    Item* item2 = new Item("Medium Drink", 1.99);
-    test->addItem(item1);
-    test->addItem(item2);
-    item1->addFoodTag();
+
+TEST(CategoryTest, Complex2CategoryTest) {
+	Tag* test = new Category("American");
+	Tag* ckn = new Category("Chicken");
+	Tag* sandwich = new Category("Sandwich");
+	test->addTag(ckn);
+	test->addTag(sandwich);
+	EXPECT_EQ(test->find("Chicken"), ckn);
+	EXPECT_EQ(test->find("Sandwich"), sandwich);
+	test->display();
+	cout << endl;
+	Tag* foodItem = new FoodItem("Chicken Sandwich");
+	sandwich->addTag(foodItem);
+	EXPECT_EQ(test->find("Chicken Sandwich"), nullptr);
+	EXPECT_EQ(sandwich->find("Chicken Sandwich"), foodItem);
+	EXPECT_EQ(ckn->find("Chicken Sandwich"), nullptr);
+	test->display();
+	cout << endl;
 }
-*/
+
+TEST(CategoryTest, Complex3CategoryTest) {
+	Tag* test = new Category("American");
+        Tag* ckn = new Category("Chicken");
+        Tag* sandwich = new Category("Sandwich");
+	Tag* meat = new Category("Meat");
+	test->addTag(meat);
+	test->addTag(sandwich);
+	meat->addTag(ckn);
+	Tag* fast = new Category("Fast Food");
+	test->addTag(fast);
+	Tag* foodItem = new FoodItem("Chicken Sandwich");
+	sandwich->addTag(foodItem);	
+	test->display();
+	cout << endl;
+	EXPECT_EQ(test->find("American"), nullptr);
+	EXPECT_EQ(test->find("Meat"), meat);
+	EXPECT_EQ(meat->find("Chicken"), ckn);
+}
+ 
+TEST(TagTest, ItemTagTest) {
+	Item* item1 = new Item("Chicken Sandwich", 5.99);
+	Item* item2 = new Item("Medium Drink", 1.99);
+    	item1->addCategoryTag("American");
+	item1->addCategoryTag("Meat", "American");
+	item1->addCategoryTag("Sandwich", "American");
+	item1->addCategoryTag("Chicken", "Meat");
+	item1->addFoodTag("Chicken Sandwich", "Sandwich");
+	item1->addCategoryTag("Fast Food");
+	item2->addFoodTag("Drink");
+
+	item1->displayItem();	
+	item2->displayItem();
+}
+
 #endif //__TAG_TEST_HPP__

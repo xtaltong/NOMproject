@@ -15,7 +15,7 @@ class Item{
         double price;
     public:
         Item();
-        Item(string name, double price): name(name), price(price){};
+        Item(string name, double price): name(name), price(price), itemTag(nullptr){};
         void setName(string name);
         string getName() const;
         void setPrice(double price);
