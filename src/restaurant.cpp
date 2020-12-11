@@ -31,11 +31,7 @@ Item* Restaurant::getItem(int index) const {
 }
 
 double Restaurant::getSubtotal() const {
-    subtotal = 0;
-    for (unsigned int i = 0; i < order.size(); i++){
-        subtotal = subtotal + order.at(i)->getPrice();
-    }    
-        
+    return subtotal;
 }
 
 void Restaurant::display() const {
