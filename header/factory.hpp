@@ -10,6 +10,18 @@
 #include "ddtimebreakdown.hpp"
 #include "restaurant.hpp"
 
+struct Fee {
+	string feeType;
+	double price;
+	Fee(string feeType, double price) : feeType(feeType), price(price) {};
+};
+
+struct Time {
+	string timeType;
+	int time;
+	Time(string timeType, int time) : timeType(timeType), time(time) {};
+};
+
 class Factory {
     protected:
         PriceBreakdown* pbd;
