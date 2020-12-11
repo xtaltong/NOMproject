@@ -1,11 +1,13 @@
 #include "header/category.hpp"
-//#include "header/factory.hpp"
+#include "header/factory.hpp"
 #include "header/fooditem.hpp"
 #include "header/item.hpp"
-//#include "header/pricebreakdown.hpp"
-//#include "header/timebreakdown.hpp"
+#include "header/pricebreakdown.hpp"
+#include "header/timebreakdown.hpp"
 #include "header/restaurant.hpp"
-//#include "header/strategy.hpp"
+#include "header/strategy.hpp"
+#include "header/timestrategy.hpp"
+#include "header/pricestrategy.hpp"
 #include "header/tag.hpp"
 #include <fstream>
 #include <iostream>
@@ -115,10 +117,14 @@ int main(){
     //strategy
     if (option == 0){
         //price comparison
+        Strategy* price = new PriceStrategy(user);
+        price->compare();
     }
 
     if (option == 1){
         //time comparison
+        Strategy* price = new TimeStrategy(user);
+        price->compare();
     }
 
     return 1;

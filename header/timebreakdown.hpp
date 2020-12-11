@@ -17,6 +17,7 @@ class TimeBreakdown{
     public:
         TimeBreakdown();
         virtual void collectTimeMetaData(Restaurant *) = 0;
+        vector<Time> getTimes() const {return timeBreakdown;}; 
 };
 
 #endif
