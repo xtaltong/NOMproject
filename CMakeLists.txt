@@ -41,10 +41,6 @@ ADD_EXECUTABLE(factoryTest
     src/restaurant.cpp
     src/fooditem.cpp
 	src/category.cpp
-	src/ddpricebreakdown.cpp
-	src/uepricebreakdown.cpp
-	src/ddtimebreakdown.cpp
-	src/uetimebreakdown.cpp
 	src/factory.cpp
 	src/pricestrategy.cpp
 	src/timestrategy.cpp
@@ -57,10 +53,6 @@ ADD_EXECUTABLE(strategyTest
     src/restaurant.cpp
     src/fooditem.cpp
 	src/category.cpp
-	src/ddpricebreakdown.cpp
-	src/uepricebreakdown.cpp
-	src/ddtimebreakdown.cpp
-	src/uetimebreakdown.cpp
 	src/factory.cpp
 	src/pricestrategy.cpp
 	src/timestrategy.cpp

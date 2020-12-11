@@ -1,4 +1,4 @@
-#ifndef __PRICEBREAKDOWN_HPP__
+/*#ifndef __PRICEBREAKDOWN_HPP__
 #define __PRICEBREAKDOWN_HPP__
 
 #include <iostream>
@@ -16,7 +16,7 @@ class PriceBreakdown {
 	protected:
 		vector<Fee> feeBreakdown;
 	public:
-		PriceBreakdown();
+		PriceBreakdown();*/
 		/*void sort() {
 			for (unsigned int i = 0; i + 1 < feeBreakdown.size(); i++) {
 				int min = i;
@@ -30,11 +30,11 @@ class PriceBreakdown {
 				feeBreakdown.at(i) = temp;
 			}
 		};*/
-		virtual void collectPriceMetadata(Restaurant *) = 0;
+		/*virtual void collectPriceMetadata(Restaurant *) = 0;
 		vector<Fee> getFees() const {return feeBreakdown;}; 
 };
 #endif //__PRICEBREAKDOWN_HPP__
-
+*/
 //{(pickup, 10), (delivery, 20)}
 //cookTime x num Items
 
