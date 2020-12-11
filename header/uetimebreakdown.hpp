@@ -10,7 +10,7 @@ class UETimeBreakdown: public TimeBreakdown{
 
     public:
         UETimeBreakdown();
-        void collectTimeMetaData();
+        virtual void collectTimeMetaData(Restaurant* );
 };
 
 #endif //__UETIMEBREAKDOWN_HPP__
