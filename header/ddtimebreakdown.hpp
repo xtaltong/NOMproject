@@ -10,7 +10,7 @@ class DDTimeBreakdown: public TimeBreakdown{
 
     public:
         DDTimeBreakdown();
-        void collectTimeMetaData();
+        void collectTimeMetaData(Restaurant *);
 };
 
 #endif
