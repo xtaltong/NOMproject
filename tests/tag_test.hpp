@@ -109,4 +109,60 @@ TEST(TagTest, ItemTagIntegrationTest) {
 	EXPECT_EQ(*test == *other, true);
 }
 
+TEST(TagTest, RestaurantTagTest) {
+	Restaurant* test = new Restaurant("Chick-Fil-A");
+	Item* item1 = new Item("Chicken Sandwich", 5.99);
+	Item* item2 = new Item("Medium Drink", 1.99);
+	Item* item3 = new Item("Waffle Fries", 2.99);
+	test->addItem(item1);
+	test->addItem(item2);
+	test->addItem(item3);
+
+	item1->addCategoryTag("American");
+        item1->addCategoryTag("Meat", "American");
+        item1->addCategoryTag("Sandwich", "American");
+        item1->addCategoryTag("Chicken", "Meat");
+        item1->addFoodTag("Chicken Sandwich", "Sandwich");
+	item3->addCategoryTag("Fried");
+	item3->addCategoryTag("Potato", "Fried");
+
+	test->display();
+
+	EXPECT_EQ(test->getRestaurantName(), "Chick-Fil-A");
+	EXPECT_EQ(test->getItem(0), item1);
+		
+}
+
+TEST(TagTest, RestaurantTagTest2) {
+	Restaurant* test = new Restaurant("Chick-Fil-A");
+        Item* item1 = new Item("Chicken Sandwich", 5.99);
+        Item* item2 = new Item("Medium Drink", 1.99);
+        Item* item3 = new Item("Waffle Fries", 2.99);
+        test->addItem(item1);
+        test->addItem(item2);
+        test->addItem(item3);
+
+        item1->addCategoryTag("American");
+        item1->addCategoryTag("Meat", "American");
+        item1->addCategoryTag("Sandwich", "American");
+        item1->addCategoryTag("Chicken", "Meat");
+        item1->addFoodTag("Chicken Sandwich", "Sandwich");
+        item3->addCategoryTag("Fried");
+        item3->addCategoryTag("Potato", "Fried");
+	
+	test->removeItem(item2);
+
+	EXPECT_EQ(test->getItem(0), item1);
+	EXPECT_EQ(test->getItem(1), item3);
+	EXPECT_EQ(test->getItem(2), nullptr);	
+
+	test->removeItem(item1);
+	
+	EXPECT_EQ(test->getItem(0), item3);
+	EXPECT_EQ(test->getItem(1), nullptr);
+
+        test->display();
+	
+}
+
 #endif //__TAG_TEST_HPP__
