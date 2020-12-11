@@ -72,7 +72,7 @@
  <img src="images/startMenu.png?raw=true" width="500">
  <img src="images/checkMenu.png?raw=true" width="500">
  <img src="images/addItemNoTag.png?raw=true" width="500">
- <img src="images/addItemWithTag.PNG?raw=true" width="500">
+ <img src="images/addItemWithTag.png?raw=true" width="500">
  <img src="images/viewOrder.png?raw=true" width="500">
  <img src="images/removeItem.png?raw=true" width="500">
  <img src="images/priceCompare.png?raw=true" width="500">
