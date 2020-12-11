@@ -75,4 +75,8 @@ void DDPriceBreakdown::collectPriceMetadata(Restaurant *rest) {
     Fee deliveryFee("Delivery", dFee);
     feeBreakdown.push_back(deliveryFee);
 
+    
+    // {(handling, 1), (delivery, 5), (tax, 3)}
+    // {(delivery, 4), (handling, 2), (tax, 3)}
 }
+

@@ -2,6 +2,8 @@
 #define __PRICEBREAKDOWN_HPP__
 
 #include <iostream>
+#include <vector>
+#include "restaurant.hpp"
 using namespace std;
 
 struct Fee {
