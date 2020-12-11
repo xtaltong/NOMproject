@@ -49,7 +49,7 @@ void DDTimeBreakdown::collectTimeMetaData(Restaurant *rest) {
     fin.close();
 
     // calculate time needed to prepare food
-    int foodPrep = rest->getOrder().size() * 2;
+    int foodPrep = rest->(getOrder().size()) * 2;
     Time cooking("Cooking", foodPrep);
     timeBreakdown.push_back(cooking);
 
