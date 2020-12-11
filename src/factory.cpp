@@ -64,7 +64,7 @@ void UberEatsFactory::createPriceBreakdown() {
     // return pbd;
 }
 
-TimeBreakdown* UberEatsFactory::createTimeBreakdown() {
+void UberEatsFactory::createTimeBreakdown() {
     ifstream fin;
     fin.open("../CSV/UberEats - Restauraunt List.csv");
 
@@ -176,7 +176,7 @@ void DoorDashFactory::createPriceBreakdown() {
     // return pbd;
 }
 
-TimeBreakdown* DoorDashFactory::createTimeBreakdown() {
+void DoorDashFactory::createTimeBreakdown() {
     ifstream fin;
     fin.open("../CSV/DoorDash - Restauraunt List.csv");
 
