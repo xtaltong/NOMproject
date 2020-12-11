@@ -75,7 +75,8 @@ void UberEatsFactory::createPriceBreakdown() {
     feeBreakdown.push_back(tax);
     //service fee = handling x num Items
      //service fee = 15% 
-    double servFee = subtotal * 1.15;
+    double servFee = subtotal * 0.15;
+    cout << subtotal << endl;
     Fee serviceFee("Service", servFee);
     feeBreakdown.push_back(serviceFee);
     //delivery Fee = fee x distance
