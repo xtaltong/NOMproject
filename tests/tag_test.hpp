@@ -20,6 +20,7 @@ TEST(FoodItemTest, FoodItemTest) {
 TEST(CategoryTest, BasicCategoryTest) {
 	Tag* test = new Category("Sandwich");
 	test->display();
+	cout << endl;
 	EXPECT_EQ(test->getName(), "Sandwich");
 }
 
@@ -31,6 +32,7 @@ TEST(CategoryTest, ComplexCategoryTest) {
 	EXPECT_EQ(test->find("Chicken Sandwich"), newTag);
 	EXPECT_EQ(test->find("Sandwich"), nullptr);
 	test->display();
+	cout << endl;
 }
 
 TEST(CategoryTest, Complex2CategoryTest) {
@@ -71,9 +73,10 @@ TEST(CategoryTest, Complex3CategoryTest) {
 	EXPECT_EQ(meat->find("Chicken"), ckn);
 }
  
-TEST(TagTest, ItemTagTest) {
+TEST(TagTest, ComplexItemTagTest) {
 	Item* item1 = new Item("Chicken Sandwich", 5.99);
 	Item* item2 = new Item("Medium Drink", 1.99);
+	Item* item3 = new Item("Waffle Fries", 2.99);
     	item1->addCategoryTag("American");
 	item1->addCategoryTag("Meat", "American");
 	item1->addCategoryTag("Sandwich", "American");
@@ -81,9 +84,29 @@ TEST(TagTest, ItemTagTest) {
 	item1->addFoodTag("Chicken Sandwich", "Sandwich");
 	item1->addCategoryTag("Fast Food");
 	item2->addFoodTag("Drink");
+	item3->addCategoryTag("Fried");
+	item3->addCategoryTag("Potato", "Fried");
+	item3->addFoodTag("Waffle Fries", "Potato");
+	item3->addFoodTag("Golden");
 
 	item1->displayItem();	
 	item2->displayItem();
+	item3->displayItem();
+}
+
+TEST(TagTest, ItemNoTagTest) {
+	Item* test = new Item("Chicken Sandwich", 5.99);
+	test->displayItem();
+	EXPECT_EQ(test->getName(), "Chicken Sandwich");
+	EXPECT_EQ(test->getPrice(), 5.99);
+}
+
+TEST(TagTest, ItemTagIntegrationTest) {
+	Item* test = new Item("Chicken Sandwich", 5.99);
+	test->addCategoryTag("American");
+	Item* other = new Item("Chicken Sandwich", 5.99);
+	
+	EXPECT_EQ(*test == *other, true);
 }
 
 #endif //__TAG_TEST_HPP__
