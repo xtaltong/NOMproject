@@ -12,8 +12,8 @@ struct Time {
 };
 
 class TimeBreakdown{
-    private:
-
+    protected:
+	vector<Time> timeBreakdown;
     public:
         TimeBreakdown();
         virtual void collectTimeMetaData(Restaurant *) = 0;
