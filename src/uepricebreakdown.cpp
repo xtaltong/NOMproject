@@ -38,40 +38,27 @@ void UEPriceBreakdown::collectPriceMetadata(Restaurant *rest) {
     }
 
     fin.close();
-    //open restaurant csv
-    //find items+price that correspond to order
-    double subtotal = rest->getSubtotal();
     
-    /*for (auto i : rest->getOrder()) {
-        Fee item(rest->getOrder(i)->name, rest->getOrder(i)-> //find its price from UE files and save it to the item
-    }*/
-
-    double dFee = stod(row[2]) * stod(row[1]);
-    //if subtotal(before tax) < 15
+    double subtotal = rest->getSubtotal();
+    //small order fee
     double smallFee = 3;
+    //if subtotal(before tax) < $15, apply small order fee
     if(subtotal < 15){
         Fee small("Small Order Fee", smallFee);
-        feeBreakdown.push_back(smallFee);
+        feeBreakdown.push_back(small);
     }
-        
-    double servFee = subtotal * 1.15
-    string taxpercent = "8.72%";
-    subtotal = 108.72*subtotal;
-
-    //tax+total = 108.72 x cost
+    double tFee = 0.0872*subtotal;
+    //tax = 108.72 x cost
     Fee tax("Tax", tFee);
     feeBreakdown.push_back(tax);
-    //get handling
-    //double hFee = handling x num Items
+    //service fee = handling x num Items
+     //service fee = 15%    
+    double servFee = subtotal * 1.15;
     Fee serviceFee("Service", servFee);
-    feeBreakdown.push_back(servFee);
-    //get deliveryfee
-    //double dFee = fee x distance
+    feeBreakdown.push_back(serviceFee);
+    //delivery Fee = fee x distance
+    double dFee = stod(row[2]) * stod(row[1]);
     Fee deliveryFee("Delivery", dFee);
     feeBreakdown.push_back(deliveryFee);
     
-    
-    
-    // {(handling, 1), (delivery, 5), (tax, 3)}
-    // {(delivery, 4), (handling, 2), (tax, 3)}
 }
