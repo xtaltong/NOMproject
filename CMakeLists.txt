@@ -10,6 +10,9 @@ ADD_EXECUTABLE(NOM
 	src/fooditem.cpp
 	src/item.cpp
 	src/restaurant.cpp
+	src/pricestrategy.cpp
+	src/timestrategy.cpp
+	src/factory.cpp
 )
 
 ADD_EXECUTABLE(test
@@ -41,8 +44,10 @@ ADD_EXECUTABLE(factoryTest
 	src/ddpricebreakdown.cpp
 	src/uepricebreakdown.cpp
 	src/ddtimebreakdown.cpp
-	src/uepricebreakdown.cpp
+	src/uetimebreakdown.cpp
 	src/factory.cpp
+	src/pricestrategy.cpp
+	src/timestrategy.cpp
 )
 
 ADD_EXECUTABLE(strategyTest
@@ -55,7 +60,7 @@ ADD_EXECUTABLE(strategyTest
 	src/ddpricebreakdown.cpp
 	src/uepricebreakdown.cpp
 	src/ddtimebreakdown.cpp
-	src/uepricebreakdown.cpp
+	src/uetimebreakdown.cpp
 	src/factory.cpp
 	src/pricestrategy.cpp
 	src/timestrategy.cpp
@@ -65,5 +70,5 @@ TARGET_LINK_LIBRARIES(test gtest)
 TARGET_LINK_LIBRARIES(compositeTest gtest)
 TARGET_LINK_LIBRARIES(factoryTest gtest)
 TARGET_LINK_LIBRARIES(strategyTest gtest)
-TARGET_LINK_LIBRARIES(NOM gtest)
+
 TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)

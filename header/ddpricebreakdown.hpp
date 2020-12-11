@@ -4,7 +4,7 @@
 #include <iostream>
 #include <vector>
 #include "pricebreakdown.hpp"
-
+class PriceBreakdown;
 class DDPriceBreakdown : public PriceBreakdown {
         public:
 		DDPriceBreakdown();

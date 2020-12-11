@@ -55,8 +55,16 @@ vector<Item *> Restaurant::getOrder() const{
 void Restaurant::createMenu(){
     ifstream fin;
     stringstream ss;
-    ss << "CSV/DoorDash - " << this->name << ".csv"; 
+	//string a = ".csv"; string b = "DoorDash"; string c = b+a;
+	//cout << c << endl;
+//string s = ".csv";    
+ //string y = "CSV/DoorDash - " + this->name; 
+	//cout <<"str: " <<  y+s << endl;
+	//cout << "string" << endl;
+    //ss << s;    
+ss << "CSV/DoorDash - " << this->name << ".csv"; 
     string FILENAME = ss.str();
+	cout << FILENAME << endl;
     fin.open(FILENAME);
     ss.str("");
     ss.clear();
