@@ -12,7 +12,10 @@
 
 TEST(PriceBreakdownTest, Test) {
     Restaurant* test = new Restaurant("Chick-Fil-A");
-    
+    PriceBreakdown* uePrices = new UEPriceBreakdown();
+    PriceBreakdown* ddPrices = new DDPriceBreakdown();
+    uePrices->collectPriceMetadata(test);
+    ddPrices->collectPriceMetadata(test);
 }
 
 #endif //__FACT_TEST_HPP__
