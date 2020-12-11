@@ -64,7 +64,6 @@ void Restaurant::createMenu(){
     //ss << s;    
 ss << "CSV/DoorDash - " << this->name << ".csv"; 
     string FILENAME = ss.str();
-	cout << FILENAME << endl;
     fin.open(FILENAME);
     ss.str("");
     ss.clear();

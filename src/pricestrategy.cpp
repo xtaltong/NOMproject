@@ -5,8 +5,6 @@ using namespace std;
 PriceStrategy::PriceStrategy(Restaurant* rest) : Strategy(rest) {}
 
 void PriceStrategy::compare(){
-    // PriceBreakdown* uepbd = uefact->createPriceBreakdown();
-    // PriceBreakdown* ddpbd = ddfact->createPriceBreakdown();
     uefact->createPriceBreakdown();
     ddfact->createPriceBreakdown();
     // uepbd->collectPriceMetadata(rest);
@@ -43,6 +41,7 @@ void PriceStrategy::compare(){
     cout << endl;
     cout << "Total Cost - $" << orderSum + feeSum << endl;
     cout << endl;
+
     // string uberPrice = restaurant->priceBreakdown(uber);
     // string dashPrice = restaurant->priceBreakdown(dash); 
 }

@@ -19,32 +19,48 @@ UberEatsFactory::UberEatsFactory(Restaurant* rest) : Factory(rest) {}
 
 void UberEatsFactory::createPriceBreakdown() {
     ifstream fin;
-    fin.open("../CSV/UberEats - Restauraunt List.csv");
-
+    fin.open("CSV/UberEats - Restaurant List.csv");
     if(!fin.is_open()){
         throw runtime_error("Could not open File");
     }
     vector<string> row; 
     string line, word, temp, colname;
-
-    while(fin >> temp){
-        row.clear();
-        getline(fin,line);
-        istringstream ss(line);
-        //checks first phrase in each column
-        while(getline(ss, colname, ',')){
-            //if name matches restaurant name, push row info into vector row
-            if (colname == rest->getRestaurantName()){
-                while(ss >> word){
-                    row.push_back(word);    
-                    if(ss.peek() == ',') ss.ignore();
-                }
-            }
+    stringstream ss;
+    getline(fin,line);
+    ss << line;
+    for (int i = 0; i < 11; i++){
+        while (getline(ss, word, ',')){
+            row.push_back(word);
+        }
+        if (row.at(0) == rest->getRestaurantName()){
+            break;
+        }
+        else{
+            row.clear();
+            getline(fin,line);
+            ss.str("");
+            ss.clear();
+            ss << line;
         }
     }
 
-    fin.close();
+    // while(fin >> temp){
+    //     row.clear();
+    //     getline(fin,line);
+    //     istringstream ss(line);
+    //     //checks first phrase in each column
+    //     while(getline(ss, colname, ',')){
+    //         //if name matches restaurant name, push row info into vector row
+    //         if (colname == rest->getRestaurantName()){
+    //             while(ss >> word){
+    //                 row.push_back(word);    
+    //                 if(ss.peek() == ',') ss.ignore();
+    //             }
+    //         }
+    //     }
+    // }
     
+    fin.close();
     double subtotal = rest->getSubtotal();
     //small order fee
     double smallFee = 3;
@@ -58,8 +74,9 @@ void UberEatsFactory::createPriceBreakdown() {
     Fee tax("Tax", tFee);
     feeBreakdown.push_back(tax);
     //service fee = handling x num Items
-     //service fee = 15%    
-    double servFee = subtotal * 1.15;
+     //service fee = 15% 
+    double servFee = subtotal * 0.15;
+    cout << subtotal << endl;
     Fee serviceFee("Service", servFee);
     feeBreakdown.push_back(serviceFee);
     //delivery Fee = fee x distance
@@ -68,34 +85,50 @@ void UberEatsFactory::createPriceBreakdown() {
     feeBreakdown.push_back(deliveryFee);
     // pbd = new UEPriceBreakdown();
     // return pbd;
-
 }
 
 void UberEatsFactory::createTimeBreakdown() {
     ifstream fin;
-    fin.open("../CSV/UberEats - Restauraunt List.csv");
-
+    fin.open("CSV/UberEats - Restaurant List.csv");
     if(!fin.is_open()){
         throw runtime_error("Could not open File");
     }
     vector<string> row; 
     string line, word, temp, colname;
-
-    while(fin >> temp){
-        row.clear();
-        getline(fin,line);
-        istringstream ss(line);
-        //checks first phrase in each column
-        while(getline(ss, colname, ',')){
-            //if name matches restaurant name, push row info into vector row
-            if (colname == rest->getRestaurantName()){
-                while(ss >> word){
-                    row.push_back(word);    
-                    if(ss.peek() == ',') ss.ignore();
-                }
-            }
+    stringstream ss;
+    getline(fin,line);
+    ss << line;
+    for (int i = 0; i < 11; i++){
+        while (getline(ss, word, ',')){
+            row.push_back(word);
+        }
+        if (row.at(0) == rest->getRestaurantName()){
+            break;
+        }
+        else{
+            row.clear();
+            getline(fin,line);
+            ss.str("");
+            ss.clear();
+            ss << line;
         }
     }
+
+    // while(fin >> temp){
+    //     row.clear();
+    //     getline(fin,line);
+    //     istringstream ss(line);
+    //     //checks first phrase in each column
+    //     while(getline(ss, colname, ',')){
+    //         //if name matches restaurant name, push row info into vector row
+    //         if (colname == rest->getRestaurantName()){
+    //             while(ss >> word){
+    //                 row.push_back(word);    
+    //                 if(ss.peek() == ',') ss.ignore();
+    //             }
+    //         }
+    //     }
+    // }
 
     fin.close();
     
@@ -119,38 +152,71 @@ DoorDashFactory::DoorDashFactory(Restaurant* rest) : Factory(rest) {}
 
 void DoorDashFactory::createPriceBreakdown() {
     ifstream fin;
-    fin.open("../CSV/DoorDash - Restauraunt List.csv");
-
+    fin.open("CSV/DoorDash - Restaurant List.csv");
     if(!fin.is_open()){
         throw runtime_error("Could not open File");
     }
     vector<string> column; 
     string line, word, temp;
-    getline(fin, line);
-    istringstream ss(line);
-    int colIdx = 0;
-    while(ss >> word){
-        if(word == rest->getRestaurantName()){
-            column.push_back(word);
-            break;
-        }
-        else{
-            if(ss.peek() == ',') ss.ignore();
-            colIdx++;
-        }
+    stringstream ss;
+    // int colIdx = 0;
+    // while(ss >> word){
+    //     if(word == rest->getRestaurantName()){
+    //         column.push_back(word);
+    //         break;
+    //     }
+    //     else{
+    //         if(ss.peek() == ',') ss.ignore();
+    //         colIdx++;
+    //     }
+    // }
+    // while(getline(fin,line)){
+    getline(fin,line);
+    ss << line;
+    while (getline(ss, word, ',')){
+        column.push_back(word);
     }
-    while(getline(fin,line)){
-        int columnIdx = 0;
-        while(ss >> word){
-            if(columnIdx == colIdx){
-                column.push_back(word);
-                if(ss.peek() == ',') ss.ignore();
-            }
-            else{
-                columnIdx++;
-            }
+    int index = 0;
+    for(auto i : column){
+        if(i != rest->getRestaurantName()){
+            index++;
         }
+        else{break;}
     }
+    ss.str("");
+    ss.clear();
+    vector <string> distance;
+    getline(fin,line);
+    ss << line;
+    while (getline(ss, word, ',')){
+        distance.push_back(word);
+    }
+    ss.str("");
+    ss.clear();
+    vector <string> Dfee;
+    getline(fin,line);
+    ss << line;
+    while (getline(ss, word, ',')){
+        Dfee.push_back(word);
+    }
+    ss.str("");
+    ss.clear();
+    vector <string> Sfee;
+    getline(fin,line);
+    ss << line;
+    while (getline(ss, word, ',')){
+        Sfee.push_back(word);
+    }
+        // int columnIdx = 0;
+        // while(ss >> word){
+        //     if(columnIdx == colIdx){
+        //         column.push_back(word);
+        //         if(ss.peek() == ',') ss.ignore();
+        //     }
+        //     else{
+        //         columnIdx++;
+        //     }
+        // }
 
 
     fin.close();
@@ -172,11 +238,11 @@ void DoorDashFactory::createPriceBreakdown() {
     Fee tax("Tax", tFee);
     feeBreakdown.push_back(tax);
     //service fee = servicefee% x subtotal
-    double servFee = subtotal * stod(column[4]);
+    double servFee = subtotal * stod(Sfee.at(index));
     Fee serviceFee("Service", servFee);
     feeBreakdown.push_back(serviceFee);
     //delivery fee = fee x distance
-    double dFee = stod(column[2]) * stod(column[1]);
+    double dFee = stod(distance.at(index)) * stod(distance.at(index));
     Fee deliveryFee("Delivery", dFee);
     feeBreakdown.push_back(deliveryFee);
     // pbd = new DDPriceBreakdown();
@@ -185,38 +251,76 @@ void DoorDashFactory::createPriceBreakdown() {
 
 void DoorDashFactory::createTimeBreakdown() {
     ifstream fin;
-    fin.open("../CSV/DoorDash - Restauraunt List.csv");
-
+    fin.open("CSV/DoorDash - Restaurant List.csv");
     if(!fin.is_open()){
         throw runtime_error("Could not open File");
     }
     vector<string> column; 
     string line, word, temp;
-    getline(fin, line);
-    istringstream ss(line);
-    int colIdx = 0;
-    while(ss >> word){
-        if(word == rest->getRestaurantName()){
-            column.push_back(word);
-            break;
-        }
-        else{
-            if(ss.peek() == ',') ss.ignore();
-            colIdx++;
-        }
+    stringstream ss;
+
+    getline(fin,line);
+    ss << line;
+    while (getline(ss, word, ',')){
+        column.push_back(word);
     }
-    while(getline(fin,line)){
-        int columnIdx = 0;
-        while(ss >> word){
-            if(columnIdx == colIdx){
-                column.push_back(word);
-                if(ss.peek() == ',') ss.ignore();
-            }
-            else{
-                columnIdx++;
-            }
+    int index = 0;
+    for(auto i : column){
+        if(i != rest->getRestaurantName()){
+            index++;
         }
+        else{break;}
     }
+    ss.str("");
+    ss.clear();
+
+    getline(fin,line);
+    ss << line;
+
+    ss.str("");
+    ss.clear();
+
+    getline(fin,line);
+    ss << line;
+
+    ss.str("");
+    ss.clear();
+
+    getline(fin,line);
+    ss << line;
+
+    ss.str("");
+    ss.clear();
+
+    vector <string> time;
+    getline(fin,line);
+    ss << line;
+    while (getline(ss, word, ',')){
+        time.push_back(word);
+    }
+    // int colIdx = 0;
+    // while(ss >> word){
+    //     if(word == rest->getRestaurantName()){
+    //         column.push_back(word);
+    //         break;
+    //     }
+    //     else{
+    //         if(ss.peek() == ',') ss.ignore();
+    //         colIdx++;
+    //     }
+    // }
+    // while(getline(fin,line)){
+    //     int columnIdx = 0;
+    //     while(ss >> word){
+    //         if(columnIdx == colIdx){
+    //             column.push_back(word);
+    //             if(ss.peek() == ',') ss.ignore();
+    //         }
+    //         else{
+    //             columnIdx++;
+    //         }
+    //     }
+    // }
 
     fin.close();
 
@@ -225,13 +329,12 @@ void DoorDashFactory::createTimeBreakdown() {
     Time cooking("Cooking", foodPrep);
     timeBreakdown.push_back(cooking);
 
-    int deliveryTime = stoi(column[4]);
+    int deliveryTime = stoi(time.at(index));
     Time delivery("Delivery", deliveryTime);
     timeBreakdown.push_back(delivery);
     // tbd = new DDTimeBreakdown();
     // return tbd;
 }
-
 // void DoorDashFactory::createRestaurantList() {
 
 // }
