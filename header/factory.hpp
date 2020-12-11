@@ -18,7 +18,7 @@ class Factory {
     public:
         /* Pure Virtual Functions */
         Factory(Restaurant* rest) : rest(rest) {};
-        virtual PriceBreakdown* createPriceBreakdown() = 0;
+        virtual void createPriceBreakdown() = 0;
         virtual TimeBreakdown* createTimeBreakdown() = 0;
         // virtual void createRestaurantList() = 0;
 };
@@ -26,7 +26,7 @@ class Factory {
 class UberEatsFactory : public Factory{
     public:
         UberEatsFactory(Restaurant* rest);
-        virtual PriceBreakdown* createPriceBreakdown();
+        virtual void createPriceBreakdown();
         virtual TimeBreakdown* createTimeBreakdown();
         // virtual void createRestaurantList();
 };
@@ -34,7 +34,7 @@ class UberEatsFactory : public Factory{
 class DoorDashFactory : public Factory{
     public:
         DoorDashFactory(Restaurant* rest);
-        virtual PriceBreakdown* createPriceBreakdown();
+        virtual void createPriceBreakdown();
         virtual TimeBreakdown* createTimeBreakdown();
         // virtual void createRestaurantList();
 };

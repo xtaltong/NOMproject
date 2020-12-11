@@ -1,3 +1,12 @@
+#include "../header/pricebreakdown.hpp"
+#include "../header/ddpricebreakdown.hpp"
+#include "../header/restaurant.hpp"
+#include <fstream>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <stdlib.h>
+#include <vector>
 #include "../header/factory.hpp"
 
 UberEatsFactory::UberEatsFactory(Restaurant* rest) : Factory(rest) {}
@@ -79,7 +88,7 @@ TimeBreakdown* UberEatsFactory::createTimeBreakdown() {
 
 DoorDashFactory::DoorDashFactory(Restaurant* rest) : Factory(rest) {}
 
-PriceBreakdown* DoorDashFactory::createPriceBreakdown() {
+void DoorDashFactory::createPriceBreakdown() {
     pbd = new DDPriceBreakdown();
     return pbd;
 }
