@@ -9,9 +9,11 @@ Item::Item(): name(""), price(-1), itemTag(nullptr) {}
 
 void Item::displayItem() const{
     cout << this->name << " - $" << this->price << endl;
-    cout << "\tTags: ";
-    itemTag->display();
-    cout << endl;
+    if (itemTag != nullptr) { 
+    	cout << "\tTags: ";
+    	itemTag->display();
+    	cout << endl;
+    }
 }
 
 bool Item::operator==(const Item &otherItem) const{
