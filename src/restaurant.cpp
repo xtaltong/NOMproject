@@ -15,7 +15,7 @@ void Restaurant::removeItem(Item* item) {
     for (unsigned int i = 0; i < order.size(); i++) {
         if (order.at(i) == item) {
             subtotal -= item->getPrice();
-	    order.erase(order.begin() + i);
+	        order.erase(order.begin() + i);
             return;
         }
     }
@@ -31,7 +31,7 @@ Item* Restaurant::getItem(int index) const {
 }
 
 double Restaurant::getSubtotal() const {
-	return subtotal;
+    return subtotal;
 }
 
 void Restaurant::display() const {

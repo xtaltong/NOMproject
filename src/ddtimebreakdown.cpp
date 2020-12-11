@@ -11,7 +11,7 @@ using namespace std;
 
 DDTimeBreakdown::DDTimeBreakdown() {}
 
-void DDTimeBreakdown::collectPriceMetadata(Restaurant *rest) {
+void DDTimeBreakdown::collectTimeMetadata(Restaurant *rest) {
     ifstream fin;
     fin.open("../CSV/DoorDash - Restauraunt List.csv");
 
@@ -47,14 +47,13 @@ void DDTimeBreakdown::collectPriceMetadata(Restaurant *rest) {
     }
 
     fin.close();
-    
-    // calculate time needed to prepare food
-    //int foodPrep = rest->numItems() * 2;
-    
-    //Time cooking("Cooking", foodPrep);
-    //timeBreakdown.push_back(foodPrep);
 
-    int deliveryTime = stoi(row[4]);
+    // calculate time needed to prepare food
+    int foodPrep = rest->getOrder().size() * 2;
+    Time cooking("Cooking", foodPrep);
+    timeBreakdown.push_back(foodPrep);
+
+    int deliveryTime = stoi(column[4]);
     Time delivery("Delivery", deliveryTime);
-    timeBreakdown.push_back(deliveryTime);
+    timeBreakdown.push_back(delivery);
 }

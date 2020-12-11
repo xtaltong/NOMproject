@@ -6,9 +6,9 @@ using namespace std;
 
 struct Time {
 	string timeType;
-	int timee;
+	int time;
 	Time(string timeType, int time) : timeType(timeType), time(time) {};
-}
+};
 
 class TimeBreakdown{
     private:

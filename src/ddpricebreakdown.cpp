@@ -50,40 +50,33 @@ void DDPriceBreakdown::collectPriceMetadata(Restaurant *rest) {
 
     fin.close();
 
-    double subtotal = 0;
-    //for (auto i : rest->getOrder()) {
-        //find its price from UE files and save it to the item
-    //}
-
-    double dFee = stod(column[2]) * stod(column[1]);
-    //if subtotal(before tax + promocode) < 15
+    double subtotal = rest->getSubtotal();
+    //small order fee
     double smallFee = 2.50;
+    //if subtotal(before tax + promocode) < 15, apply small order fee
     if(subtotal < 10){
         Fee small("Small Order Fee", smallFee);
-        feeBreakdown.push_back(smallFee);
+        feeBreakdown.push_back(small);
     }
-    //promocode
+    //promocode calculations: 20% off on orders > $15, up to $5
     if(subtotal > 15 && subtotal < 25){
         subtotal = .80 * subtotal;
-    }  
-
-    serviceFee = subtotal * stod(column[4]);
-    string taxpercent = "8.72%";
-    subtotal = 108.72*subtotal;
-
-    //tax+total = 108.72 x cost
+    } 
+    //tax = 8.72% x cost
+    double tFee = 0.0872*subtotal;
     Fee tax("Tax", tFee);
     feeBreakdown.push_back(tax);
-    //get handling
-    //double hFee = handling x num Items
-    Fee serviceFee("Service", serviceFee);
-    feeBreakdown.push_back(handlingFee);
-    //get deliveryfee
-    //double dFee = fee x distance
+    //service fee = servicefee% x subtotal
+    double servFee = subtotal * stod(column[4]);
+    Fee serviceFee("Service", servFee);
+    feeBreakdown.push_back(serviceFee);
+    //delivery fee = fee x distance
+    double dFee = stod(column[2]) * stod(column[1]);
     Fee deliveryFee("Delivery", dFee);
     feeBreakdown.push_back(deliveryFee);
-    
+
     
     // {(handling, 1), (delivery, 5), (tax, 3)}
     // {(delivery, 4), (handling, 2), (tax, 3)}
 }
+
