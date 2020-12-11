@@ -24,14 +24,16 @@ struct Time {
 
 class Factory {
     protected:
-        PriceBreakdown* pbd;
-        TimeBreakdown* tbd;
+        // PriceBreakdown* pbd;
+        // TimeBreakdown* tbd;
         Restaurant* rest;
+        vector<Fee> feeBreakdown;
+        vector<Time> timeBreakdown;
     public:
         /* Pure Virtual Functions */
         Factory(Restaurant* rest) : rest(rest) {};
         virtual void createPriceBreakdown() = 0;
-        virtual TimeBreakdown* createTimeBreakdown() = 0;
+        virtual void createTimeBreakdown() = 0;
         // virtual void createRestaurantList() = 0;
 };
 
@@ -39,7 +41,7 @@ class UberEatsFactory : public Factory{
     public:
         UberEatsFactory(Restaurant* rest);
         virtual void createPriceBreakdown();
-        virtual TimeBreakdown* createTimeBreakdown();
+        virtual void createTimeBreakdown();
         // virtual void createRestaurantList();
 };
 
@@ -47,7 +49,7 @@ class DoorDashFactory : public Factory{
     public:
         DoorDashFactory(Restaurant* rest);
         virtual void createPriceBreakdown();
-        virtual TimeBreakdown* createTimeBreakdown();
+        virtual void createTimeBreakdown();
         // virtual void createRestaurantList();
 };
 
