@@ -36,7 +36,6 @@ int main(){
     fin.open(FILENAME);
     string temp,line;
     while (getline(fin, line)){
-//        getline(fin, line);
         restList.push_back(line);
     }
     for (int i = 0; i < restList.size(); i++){

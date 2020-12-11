@@ -64,7 +64,7 @@ void Restaurant::createMenu(){
         throw runtime_error("Could not open File");
     }
     vector <string> tempV;
-    string line, word, temp, colname;
+    string line, word, temp;
 
     while (fin >> temp){
         getline(fin, line);
