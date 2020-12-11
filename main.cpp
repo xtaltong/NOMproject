@@ -15,8 +15,9 @@
 #include <stdlib.h>
 
 using namespace std;
-string restaurant;
+int restaurant;
 int option = 1;
+vector <string> restList;
 
 void mainMenu(){
     cout << "--Menu--" << endl;
@@ -29,10 +30,22 @@ void mainMenu(){
 
 int main(){
     cout << "Welcome to NOM!" << endl;
-    cout << "Please select a restaurant you would like to eat at: ";
+    
     //display restaurant list
+    string FILENAME = "../CSV/RestaurantList.csv";
+    ifstream fin;
+    fin.open(FILENAME);
+    string temp,line;
+    int i = 1;
+    while (fin >> temp){
+        getline(fin, line);
+        cout << i << " - " << line;
+        restList.push_back(line);
+        i++;
+    }
+    cout << "Please select the restaurant number you would like to eat at: ";
     cin >> restaurant;
-    Restaurant* user = new Restaurant(restaurant);
+    Restaurant* user = new Restaurant(restList.at(i-1));
     user->createMenu();
     cout << "Now it is time to select your order!" << endl;
     while (option != 0){
@@ -50,6 +63,34 @@ int main(){
             int itemNumber = 0;
             cin >> itemNumber;
             Item* item = user->getMenuItem(itemNumber);
+            string choice = "y";
+            cout << "Do you want to add tags to this food item? (y/n): ";
+            cin >> choice;
+            while (choice == "y"){
+                cout << "Do you want to add another tag to this food item? (y/n): ";
+                cin >> choice;
+                if (choice == "y"){
+                    cout << "Do you want to add a category(0) or sub category(1)? ";
+                    int catChoice = -1;
+                    cin >> catChoice;
+                    if (catChoice == 0){
+                        cout << "Enter Category Tag: ";
+                        string category;
+                        cin >> category;
+                        item->addCategoryTag(category); 
+                    }
+                    else if (catChoice == 1) {
+                        cout << "Enter Existing Category Tag: ";
+                        string category;
+                        cin >> category;
+                        cout << "Enter Sub Category Tag: ";
+                        string subCategory;
+                        cin >> subCategory;
+                        item->addCategoryTag(subCategory,category);
+                    }
+                }
+                else{break;}
+            }
             user->addItem(item);
         }
         else if(option == 3){
