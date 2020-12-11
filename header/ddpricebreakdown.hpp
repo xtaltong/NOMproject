@@ -1,6 +1,8 @@
 #ifndef __DDPRICEBREAKDOWN_HPP__
 #define __DDPRICEBREAKDOWN_HPP__
 
+#include <iostream>
+#include <vector>
 #include "pricebreakdown.hpp"
 
 class DDPriceBreakdown : public PriceBreakdown {

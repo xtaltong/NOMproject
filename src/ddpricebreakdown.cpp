@@ -1,6 +1,14 @@
 #include "../header/pricebreakdown.hpp"
 #include "../header/ddpricebreakdown.hpp"
 #include "../header/restaurant.hpp"
+#include <fstream>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <stdlib.h>
+#include <vector>
+
+using namespace std;
 
 DDPriceBreakdown::DDPriceBreakdown() {}
 
@@ -41,20 +49,19 @@ void DDPriceBreakdown::collectPriceMetadata(Restaurant *rest) {
 
 
     fin.close();
-    //open restaurant csv
-    //find items+price that correspond to order
+
     double subtotal = 0;
-    for (auto i : rest->getOrder()) {
+    //for (auto i : rest->getOrder()) {
         //find its price from UE files and save it to the item
-    }
+    //}
 
     double dFee = stod(column[2]) * stod(column[1]);
     //if subtotal(before tax + promocode) < 15
-        double smallFee = 2.50;
-        if(subtotal < 10){
-            Fee small("Small Order Fee", smallFee);
-            feeBreakdown.push_back(smallFee);
-        }
+    double smallFee = 2.50;
+    if(subtotal < 10){
+        Fee small("Small Order Fee", smallFee);
+        feeBreakdown.push_back(smallFee);
+    }
     //promocode
     if(subtotal > 15 && subtotal < 25){
         subtotal = .80 * subtotal;

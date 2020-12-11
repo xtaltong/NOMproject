@@ -1,6 +1,8 @@
 #ifndef __UEPRICEBREAKDOWN_HPP__
 #define __UEPRICEBREAKDOWN_HPP__
 
+#include <iostream>
+#include <vector>
 #include "pricebreakdown.hpp"
 
 class UEPriceBreakdown : public PriceBreakdown {
@@ -8,4 +10,4 @@ class UEPriceBreakdown : public PriceBreakdown {
 		UEPriceBreakdown();
 		virtual void collectPriceMetadata(Restaurant *);
 };
-#endif 
+#endif //__UEPRICEBREAKDOWN_HPP__
