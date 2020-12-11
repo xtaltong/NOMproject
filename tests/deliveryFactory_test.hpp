@@ -4,15 +4,14 @@
 #include "../header/restaurant.hpp"
 #include "../header/item.hpp"
 #include "../header/tag.hpp"
+#include "../header/factory.hpp"
 #include "../header/fooditem.hpp"
 #include "../header/category.hpp"
 
-TEST(PriceBreakdownTest, Test) {
+TEST(FactoryTest, BasicFactoryTest) {
     Restaurant* test = new Restaurant("Chick-Fil-A");
-    PriceBreakdown* uePrices = new UEPriceBreakdown();
-    PriceBreakdown* ddPrices = new DDPriceBreakdown();
-    uePrices->collectPriceMetadata(test);
-    ddPrices->collectPriceMetadata(test);
+    Factory* fact = new UberEatsFactory(test);
+    fact->createPriceBreakdown();
 }
 
 #endif //__FACT_TEST_HPP__
