@@ -6,9 +6,6 @@
 #include "../header/tag.hpp"
 #include "../header/fooditem.hpp"
 #include "../header/category.hpp"
-#include "../header/pricebreakdown.hpp"
-#include "../header/ddpricebreakdown.hpp"
-#include "../header/uepricebreakdown.hpp"
 
 TEST(PriceBreakdownTest, Test) {
     Restaurant* test = new Restaurant("Chick-Fil-A");
