@@ -76,6 +76,7 @@
  <img src="images/viewOrder.png?raw=true" width="300">
  <img src="images/removeItem.png?raw=true" width="300">
  <img src="images/priceCompare.png?raw=true" width="300">
+ 
  ## Installation/Usage
  > Instructions on installing and running your application
   * git clone https://github.com/cs100/final-project-ctong011-echen111-spoye001.git
