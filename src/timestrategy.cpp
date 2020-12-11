@@ -5,12 +5,14 @@ using namespace std;
 TimeStrategy::TimeStrategy(Restaurant* rest) : Strategy(rest) {}
 
 void TimeStrategy::compare(){
-    TimeBreakdown* uepbd = uefact->createTimeBreakdown();
-    TimeBreakdown* ddpbd = ddfact->createTimeBreakdown();
-    uepbd->collectTimeMetaData(rest);
-    ddpbd->collectTimeMetaData(rest);
-    vector<Time> ueTime = uepbd->getTimes();
-    vector<Time> ddTime = ddpbd->getTimes();
+    // TimeBreakdown* uepbd = uefact->createTimeBreakdown();
+    // TimeBreakdown* ddpbd = ddfact->createTimeBreakdown();
+    uefact->createTimeBreakdown();
+    ddfact->createTimeBreakdown();
+    // uepbd->collectTimeMetaData(rest);
+    // ddpbd->collectTimeMetaData(rest);
+    vector<Time> ueTime = uefact->getTimes();
+    vector<Time> ddTime = ddfact->getTimes();
 
     cout << "Restaurant: " << rest->getRestaurantName() << endl;
     cout << "Order: " << endl;

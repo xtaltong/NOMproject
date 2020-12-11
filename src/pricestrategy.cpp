@@ -5,12 +5,14 @@ using namespace std;
 PriceStrategy::PriceStrategy(Restaurant* rest) : Strategy(rest) {}
 
 void PriceStrategy::compare(){
-    PriceBreakdown* uepbd = uefact->createPriceBreakdown();
-    PriceBreakdown* ddpbd = ddfact->createPriceBreakdown();
-    uepbd->collectPriceMetadata(rest);
-    ddpbd->collectPriceMetadata(rest);
-    vector<Fee> uefees = uepbd->getFees();
-    vector<Fee> ddfees = ddpbd->getFees();
+    // PriceBreakdown* uepbd = uefact->createPriceBreakdown();
+    // PriceBreakdown* ddpbd = ddfact->createPriceBreakdown();
+    uefact->createPriceBreakdown();
+    ddfact->createPriceBreakdown();
+    // uepbd->collectPriceMetadata(rest);
+    // ddpbd->collectPriceMetadata(rest);
+    vector<Fee> uefees = uefact->getFees();
+    vector<Fee> ddfees = ddfact->getFees();
 
     cout << "Restaurant: " << rest->getRestaurantName() << endl;
     cout << "Order: " << endl;
