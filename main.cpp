@@ -66,8 +66,6 @@ int main(){
             cout << "Do you want to add tags to this food item? (y/n): ";
             cin >> choice;
             while (choice == "y"){
-                cout << "Do you want to add another tag to this food item? (y/n): ";
-                cin >> choice;
                 if (choice == "y"){
                     cout << "Do you want to add a category(0) or sub category(1)? ";
                     int catChoice = -1;
@@ -89,6 +87,8 @@ int main(){
                     }
                 }
                 else{break;}
+                cout << "Do you want to add another tag to this food item? (y/n): ";
+                cin >> choice;
             }
             user->addItem(item);
         }
