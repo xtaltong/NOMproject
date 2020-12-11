@@ -37,7 +37,24 @@ ADD_EXECUTABLE(factoryTest
 	src/factory.cpp
 )
 
+ADD_EXECUTABLE(strategyTest
+	tests/strategy_test.cpp
+	tests/comparisonStrategy_test.hpp
+    src/item.cpp
+    src/restaurant.cpp
+    src/fooditem.cpp
+	src/category.cpp
+	src/ddpricebreakdown.cpp
+	src/uepricebreakdown.cpp
+	src/ddtimebreakdown.cpp
+	src/uepricebreakdown.cpp
+	src/factory.cpp
+	src/pricestrategy.cpp
+	src/timestrategy.cpp
+)
+
 TARGET_LINK_LIBRARIES(test gtest)
 TARGET_LINK_LIBRARIES(compositeTest gtest)
 TARGET_LINK_LIBRARIES(factoryTest gtest)
+TARGET_LINK_LIBRARIES(strategyTest gtest)
 TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)
