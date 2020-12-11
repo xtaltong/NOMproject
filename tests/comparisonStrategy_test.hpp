@@ -10,10 +10,17 @@
 #include "../header/pricestrategy.hpp"
 #include "../header/timestrategy.hpp"
 
-TEST(PriceStrategyTest, Test) {
+TEST(PriceStrategyTest, PriceTest) {
     Restaurant* rest = new Restaurant("Chick-Fil-A");
     
     Strategy* test = new PriceStrategy(rest);
+    test->compare();
+}
+
+TEST(TimeStrategyTest, TimeTest) {
+    Restaurant* rest = new Restaurant("Chick-Fil-A");
+    
+    Strategy* test = new TimeStrategy(rest);
     test->compare();
 }
 

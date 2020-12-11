@@ -113,7 +113,9 @@ void UberEatsFactory::createTimeBreakdown() {
             ss << line;
         }
     }
-
+    // for (auto i : row) {
+    //     cout << i << endl;
+    // }
     // while(fin >> temp){
     //     row.clear();
     //     getline(fin,line);
@@ -136,8 +138,11 @@ void UberEatsFactory::createTimeBreakdown() {
     int foodPrep = rest->getOrder().size() * 2;
     Time cooking("Cooking", foodPrep);
     timeBreakdown.push_back(cooking);
-
-    int deliveryTime = stoi(row[4]);
+    // cout << "about to stoi" << endl;
+    // string s = row.at(3);
+    // cout << s << endl;
+    int deliveryTime = stoi(row.at(3));
+    // cout << deliveryTime << endl;
     Time delivery("Delivery", deliveryTime);
     timeBreakdown.push_back(delivery);
     // tbd = new UETimeBreakdown();
@@ -328,7 +333,7 @@ void DoorDashFactory::createTimeBreakdown() {
     int foodPrep = (rest->getOrder().size()) * 2;
     Time cooking("Cooking", foodPrep);
     timeBreakdown.push_back(cooking);
-
+    // cout << time.at(index);
     int deliveryTime = stoi(time.at(index));
     Time delivery("Delivery", deliveryTime);
     timeBreakdown.push_back(delivery);
