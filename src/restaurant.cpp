@@ -59,6 +59,7 @@ void Restaurant::createMenu(){
     string FILENAME = ss.str();
     fin.open(FILENAME);
     ss.str("");
+    ss.clear();
     if(!fin.is_open()){
         throw runtime_error("Could not open File");
     }
