@@ -11,7 +11,7 @@ using namespace std;
 
 DDTimeBreakdown::DDTimeBreakdown() {}
 
-void DDTimeBreakdown::collectTimeMetadata(Restaurant *rest) {
+void DDTimeBreakdown::collectTimeMetaData(Restaurant *rest) {
     ifstream fin;
     fin.open("../CSV/DoorDash - Restauraunt List.csv");
 
