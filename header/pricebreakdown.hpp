@@ -15,7 +15,7 @@ class PriceBreakdown {
 		vector<Fee> feeBreakdown;
 	public:
 		PriceBreakdown();
-		void sort() {
+		/*void sort() {
 			for (unsigned int i = 0; i + 1 < feeBreakdown.size(); i++) {
 				int min = i;
 				for (unsigned int j = i + 1; j < feeBreakdown.size(); j++) {
@@ -27,11 +27,11 @@ class PriceBreakdown {
 				feeBreakdown.at(min) = feeBreakdown.at(i);
 				feeBreakdown.at(i) = temp;
 			}
-		};
+		};*/
 		virtual void collectPriceMetadata(Restaurant *) = 0;
 		vector<Fee> getFees() const {return feeBreakdown;}; 
 };
-#endif
+#endif //__PRICEBREAKDOWN_HPP__
 
 //{(pickup, 10), (delivery, 20)}
 //cookTime x num Items

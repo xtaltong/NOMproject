@@ -13,4 +13,4 @@ class UETimeBreakdown: public TimeBreakdown{
         void collectTimeMetaData();
 };
 
-#endif
+#endif //__UETIMEBREAKDOWN_HPP__
