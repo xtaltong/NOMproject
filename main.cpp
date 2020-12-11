@@ -31,20 +31,21 @@ int main(){
     cout << "Welcome to NOM!" << endl;
     
     //display restaurant list
-    string FILENAME = "../CSV/RestaurantList.csv";
+    string FILENAME = "CSV/RestaurantList.csv";
     ifstream fin;
     fin.open(FILENAME);
     string temp,line;
-    int i = 1;
     while (fin >> temp){
         getline(fin, line);
-        cout << i << " - " << line;
         restList.push_back(line);
-        i++;
     }
+    for (int i = 0; i < restList.size(); i++){
+        cout << i + 1 << " - " << restList.at(i) << endl;
+    }
+    cout << endl;
     cout << "Please select the restaurant number you would like to eat at: ";
     cin >> restaurant;
-    Restaurant* user = new Restaurant(restList.at(i-1));
+    Restaurant* user = new Restaurant(restList.at(restaurant-1));
     user->createMenu();
     cout << "Now it is time to select your order!" << endl;
     while (option != 0){
