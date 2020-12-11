@@ -42,8 +42,8 @@ int main(){
     cout << endl;
     cout << "Do you want cheapest price(0) or fastest time (1)? ";
     cin >> option;
-
-    //strategy pattern
+    
+    //strategy
 
     return 1;
 }

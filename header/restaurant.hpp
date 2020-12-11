@@ -15,7 +15,7 @@ class Restaurant {
 	private:
 		string name;
 		vector<Item *> order;
-		vector<string> menu; 
+		vector<Item *> menu; 
 
 	public:
 		Restaurant(string name);

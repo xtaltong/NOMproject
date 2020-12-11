@@ -55,21 +55,52 @@ void Restaurant::printMenu(){
     if(!fin.is_open()){
         throw runtime_error("Could not open File");
     }
-
+    vector <string> tempV;
     string line, word, temp, colname;
-    
-    getline(fin, line);
 
-    stringstream ss(line);
+    while (fin >> temp){
+        getline(fin, line);
 
-    while (getline(ss, word, ',')){
-        if (word != "Item"){
-            this->menu.push_back(word);
+        stringstream ss(line);
+
+        while (getline(ss, word, ',')){
+            tempV.push_back(word);
+        }
+
+        if (tempV.at(0) == "Item"){
+            tempV.erase(tempV.begin());
+            for (int i = 1; i < tempV.size(); i++){
+                Item* item = new Item(tempV.at(i), -1);
+                menu.push_back(item);
+            }
+            tempV.clear();
+            break;
         }
     }
 
-    for (int i; i < menu.size(); i++){
-        cout << i + 1 << ": " << menu.at(i) << endl; 
-    }
+    while (fin >> temp){
+        getline(fin, line);
 
+        stringstream ss(line);
+
+        while (getline(ss, word, ',')){
+            tempV.push_back(word);
+        }
+
+        if (tempV.at(0) == "Price"){
+            tempV.erase(tempV.begin());
+            for (int i = 1; i < tempV.size(); i++){
+                menu.at(i)->setPrice(stod(tempV.at(i)));
+            }
+            tempV.clear();
+            break;
+        }
+    }
+    fin.close();
+
+    for (int i = 0; i < menu.size(); i++){
+        string food = menu.at(i)->getName();
+        double price = menu.at(i)->getPrice();
+        cout << food << ": $" << price << endl;
+    }
 }
