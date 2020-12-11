@@ -45,7 +45,7 @@ vector<Item *> Restaurant::getOrder() const{
     return order;
 }
 
-void Restaurant::printMenu(){
+void Restaurant::createMenu(){
     ifstream fin;
     stringstream ss;
     ss << "../CSV/DoorDash - " << this->name << ".csv"; 
@@ -97,10 +97,21 @@ void Restaurant::printMenu(){
         }
     }
     fin.close();
+}
 
+void Restaurant::printMenu(){
     for (int i = 0; i < menu.size(); i++){
         string food = menu.at(i)->getName();
         double price = menu.at(i)->getPrice();
-        cout << food << ": $" << price << endl;
+        cout << i << " - " <<  food << ": $" << price << endl;
+    }
+}
+
+Item* Restaurant::getMenuItem(int index) const{
+    if (index >= 0 && index < menu.size()) {
+        return menu.at(index);
+    }
+    else {
+        return nullptr;
     }
 }
