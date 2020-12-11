@@ -22,6 +22,7 @@ void Category::display() const {
         i->display();
         
     }
+    
 }
 
 string Category::getName() const{

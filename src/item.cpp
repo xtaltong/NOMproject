@@ -9,6 +9,9 @@ Item::Item(): name(""), price(-1), itemTag(nullptr) {}
 
 void Item::displayItem() const{
     cout << this->name << " - $" << this->price << endl;
+    cout << "\tTags: ";
+    itemTag->display();
+    cout << endl;
 }
 
 bool Item::operator==(const Item &otherItem) const{
@@ -44,6 +47,9 @@ void Item::addCategoryTag(string tag, string link){
             linker->addTag(t);
             //return;
         }
+	else if (itemTag->getName() == link) {
+	    itemTag->addTag(t);
+	}
         else{
             delete t;
             //return;
@@ -51,7 +57,11 @@ void Item::addCategoryTag(string tag, string link){
 	return;
     } 
     else {
-        itemTag->addTag(t);
+        if (itemTag != nullptr) {
+		itemTag->addTag(t);
+	} else {
+		itemTag = t;
+	}
     }
 }
 
@@ -70,7 +80,12 @@ void Item::addFoodTag(string tag, string link){
     }
     
     else {
-        itemTag->addTag(t);
+	if (itemTag != nullptr) {
+            itemTag->addTag(t);
+	}
+	else {
+	    itemTag = t;
+	}
     }
 }
 
