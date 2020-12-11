@@ -34,6 +34,8 @@ class Factory {
         Factory(Restaurant* rest) : rest(rest) {};
         virtual void createPriceBreakdown() = 0;
         virtual void createTimeBreakdown() = 0;
+        vector<Fee> getFees() { return feeBreakdown; };
+        vector<Time> getTimes() { return timeBreakdown; };
         // virtual void createRestaurantList() = 0;
 };
 
