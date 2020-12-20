@@ -25,7 +25,7 @@ ADD_EXECUTABLE(test
 	src/category.cpp
 )
 
-ADD_EXECUTABLE(compositeTest
+ADD_EXECUTABLE(test2
 	tests/composite_test.cpp
 	tests/tag_test.hpp
     src/item.cpp
@@ -34,7 +34,7 @@ ADD_EXECUTABLE(compositeTest
 	src/category.cpp
 )
 
-ADD_EXECUTABLE(factoryTest
+ADD_EXECUTABLE(test3
 	tests/factory_test.cpp
 	tests/deliveryFactory_test.hpp
     src/item.cpp
@@ -46,7 +46,7 @@ ADD_EXECUTABLE(factoryTest
 	src/timestrategy.cpp
 )
 
-ADD_EXECUTABLE(strategyTest
+ADD_EXECUTABLE(test4
 	tests/strategy_test.cpp
 	tests/comparisonStrategy_test.hpp
     src/item.cpp
@@ -59,8 +59,8 @@ ADD_EXECUTABLE(strategyTest
 )
 
 TARGET_LINK_LIBRARIES(test gtest)
-TARGET_LINK_LIBRARIES(compositeTest gtest)
-TARGET_LINK_LIBRARIES(factoryTest gtest)
-TARGET_LINK_LIBRARIES(strategyTest gtest)
+TARGET_LINK_LIBRARIES(test2 gtest)
+TARGET_LINK_LIBRARIES(test3 gtest)
+TARGET_LINK_LIBRARIES(test4 gtest)
 
 TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)
